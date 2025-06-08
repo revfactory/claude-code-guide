@@ -14,20 +14,3 @@ binding   = "ASSETS"
 [observability.logs]
 enabled = true
 
-# Rate limiting and bot protection
-[rate_limiting]
-threshold = 100
-period = 60
-action = "block"
-
-# Security rules for bot protection
-[[rules]]
-action = "block"
-expression = "(http.user_agent contains \"SemrushBot\") or (http.user_agent contains \"AhrefsBot\") or (http.user_agent contains \"MJ12bot\") or (http.user_agent contains \"DotBot\") or (http.user_agent contains \"BLEXBot\") or (http.user_agent contains \"DataForSeoBot\") or (http.user_agent contains \"GPTBot\") or (http.user_agent contains \"ChatGPT\") or (http.user_agent contains \"CCBot\") or (http.user_agent contains \"anthropic-ai\") or (http.user_agent contains \"OpenAI\")"
-description = "Block malicious and AI training bots"
-
-[[rules]]
-action = "challenge"
-expression = "(not http.user_agent contains \"Googlebot\") and (not http.user_agent contains \"Bingbot\") and (not http.user_agent contains \"Slurp\") and (not http.user_agent contains \"DuckDuckBot\") and (not http.user_agent contains \"Baiduspider\") and (not http.user_agent contains \"YandexBot\") and (http.user_agent contains \"bot\")"
-description = "Challenge unknown bots"
-
