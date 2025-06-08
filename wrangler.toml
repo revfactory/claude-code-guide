@@ -2,6 +2,9 @@ name = "claude-code-guide"
 main = ".open-next/worker.js"
 compatibility_date = "2025-06-06"
 compatibility_flags = ["nodejs_compat"]
+routes = [
+    { pattern = "hellovibe.io", custom_domain = true }
+]
 
 [assets]
 directory = ".open-next/assets"
@@ -9,3 +12,4 @@ binding   = "ASSETS"
 
 [observability.logs]
 enabled = true
+
