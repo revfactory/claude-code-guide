@@ -79,7 +79,7 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">프로젝트 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-blue-400 font-mono text-sm">claude> </code>
+                  <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                   <code className="text-white font-mono text-sm">summarize this codebase</code>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 질문</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-blue-400 font-mono text-sm">claude> </code>
+                  <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                   <code className="text-white font-mono text-sm">how does the authentication system work?</code>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 수정</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-blue-400 font-mono text-sm">claude> </code>
+                  <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                   <code className="text-white font-mono text-sm">add error handling to the API endpoints</code>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">테스트 결과 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">npm test 2>&1 | claude -p "explain test failures"</code>
+                  <code className="text-green-400 font-mono text-sm">npm test 2{`>`}&amp;1 | claude -p "explain test failures"</code>
                 </div>
               </div>
               

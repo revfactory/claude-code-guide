@@ -309,7 +309,7 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">1. 프로젝트 요약 생성</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">Claude Code가 프로젝트를 이해할 수 있도록 요약을 생성합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                  <code className="text-blue-400 font-mono">claude> </code>
+                  <code className="text-blue-400 font-mono">claude{`>`} </code>
                   <code className="text-white font-mono">summarize this project</code>
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">2. CLAUDE.md 파일 생성</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">프로젝트 가이드 파일을 자동으로 생성합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                  <code className="text-blue-400 font-mono">claude> </code>
+                  <code className="text-blue-400 font-mono">claude{`>`} </code>
                   <code className="text-white font-mono">/init</code>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm mt-2">
@@ -330,7 +330,7 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">3. 변경사항 커밋</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">생성된 CLAUDE.md 파일을 저장소에 추가합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                  <code className="text-blue-400 font-mono">claude> </code>
+                  <code className="text-blue-400 font-mono">claude{`>`} </code>
                   <code className="text-white font-mono">commit the generated CLAUDE.md file</code>
                 </div>
               </div>

@@ -61,7 +61,7 @@ export default function CoreWorkflows() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">프로젝트 전체 분석</h3>
                 <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 mb-3">
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                    <code className="text-blue-400 font-mono text-sm">claude> </code>
+                    <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                     <code className="text-white font-mono text-sm">summarize this project</code>
                   </div>
                 </div>
@@ -106,14 +106,14 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">특정 기능 찾기</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">find where user permissions are checked</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">의존성 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">what files depend on the User model?</code>
                     </div>
                   </div>
@@ -176,14 +176,14 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 구조 개선</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">refactor the UserService to use dependency injection</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">중복 코드 제거</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">extract common validation logic into a helper</code>
                     </div>
                   </div>
@@ -256,14 +256,14 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">머지 충돌 해결</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">rebase on main and resolve any merge conflicts</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">변경사항 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">analyze the changes since last release</code>
                     </div>
                   </div>
@@ -345,21 +345,21 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">테스트 실패 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">explain why this test is failing</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">런타임 오류 해결</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">fix the race condition in the worker queue</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">보안 취약점 검사</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                      <code className="text-blue-400 font-mono text-sm">claude> </code>
+                      <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">find and fix security vulnerabilities</code>
                     </div>
                   </div>

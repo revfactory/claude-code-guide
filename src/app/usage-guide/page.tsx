@@ -171,22 +171,22 @@ export default function UsageGuide() {
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">기본 질문하기</h3>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-4">
-                <code className="text-blue-400 font-mono text-sm">claude> </code>
+                <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                 <code className="text-white font-mono text-sm">how does our authentication system work?</code>
               </div>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                <code className="text-blue-400 font-mono text-sm">claude> </code>
+                <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                 <code className="text-white font-mono text-sm">explain the payment processing flow</code>
               </div>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">코드 수정하기</h3>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-4">
-                <code className="text-blue-400 font-mono text-sm">claude> </code>
+                <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                 <code className="text-white font-mono text-sm">add input validation to the signup form</code>
               </div>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                <code className="text-blue-400 font-mono text-sm">claude> </code>
+                <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                 <code className="text-white font-mono text-sm">fix the race condition in the worker queue</code>
               </div>
             </div>
