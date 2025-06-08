@@ -162,7 +162,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8 text-center text-sm text-slate-600 dark:text-slate-300">
-            © 2025 robin@kakaocorp.com. All rights reserved.
+            © 2025 robin.hwang@kakaocorp.com. All rights reserved.
           </div>
         </div>
       </footer>
