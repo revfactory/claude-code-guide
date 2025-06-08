@@ -32,23 +32,39 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-              AI와 함께하는
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> 스마트한 개발</span>
-            </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-              Claude Code는 터미널에서 동작하는 AI 코딩 도구입니다. 
-              자연어 명령으로 코드를 편집하고, 버그를 수정하며, 프로젝트를 이해할 수 있습니다.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/getting-started" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all text-center">
-                빠른 시작
-              </a>
-              <a href="/usage-guide" className="border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">
-                사용법 가이드
-              </a>
+        <section className="py-4 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[40vh] lg:min-h-[50vh]">
+              {/* Left: Text Content */}
+              <div className="text-center lg:text-left">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4 lg:mb-6">
+                  AI와 함께하는<br />
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">스마트한 개발</span>
+                </h1>
+                <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-6 lg:mb-8">
+                  Claude Code는 터미널에서 동작하는 AI 코딩 도구입니다. 
+                  자연어 명령으로 코드를 편집하고, 버그를 수정하며, 프로젝트를 이해할 수 있습니다.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <a href="/getting-started" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all text-center">
+                    빠른 시작
+                  </a>
+                  <a href="/usage-guide" className="border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">
+                    사용법 가이드
+                  </a>
+                </div>
+              </div>
+              
+              {/* Right: Banner Image */}
+              <div className="flex justify-center lg:justify-end items-center h-full">
+                <div className="relative w-full max-w-lg">
+                  <img 
+                    src="/banner.png" 
+                    alt="Claude Code 사용 예시" 
+                    className="w-full h-full object-cover rounded-full aspect-square"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
