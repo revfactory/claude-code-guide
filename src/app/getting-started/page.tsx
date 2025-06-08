@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function GettingStarted() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -156,11 +192,7 @@ export default function GettingStarted() {
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
-                    <button className="text-slate-400 hover:text-white transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                      </svg>
-                    </button>
+                    <CopyButton text="node --version" />
                   </div>
                   <code className="text-green-400 font-mono">node --version</code>
                 </div>
@@ -174,11 +206,7 @@ export default function GettingStarted() {
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
-                    <button className="text-slate-400 hover:text-white transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                      </svg>
-                    </button>
+                    <CopyButton text="npm install -g @anthropic-ai/claude-code" />
                   </div>
                   <code className="text-green-400 font-mono">npm install -g @anthropic-ai/claude-code</code>
                 </div>
@@ -203,11 +231,7 @@ export default function GettingStarted() {
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
-                    <button className="text-slate-400 hover:text-white transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                      </svg>
-                    </button>
+                    <CopyButton text="claude --version" />
                   </div>
                   <code className="text-green-400 font-mono">claude --version</code>
                 </div>
@@ -232,7 +256,15 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">Claude Code 시작</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">프로젝트 디렉토리로 이동한 후 Claude Code를 시작합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-4">
-                  <code className="text-green-400 font-mono block mb-2">cd your-project-directory</code>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-sm">터미널</span>
+                    <CopyButton text="cd my-project" />
+                  </div>
+                  <code className="text-green-400 font-mono block mb-2">cd my-project</code>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-sm invisible">터미널</span>
+                    <CopyButton text="claude" />
+                  </div>
                   <code className="text-green-400 font-mono">claude</code>
                 </div>
               </div>
@@ -312,8 +344,12 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">1. 프로젝트 요약 생성</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">Claude Code가 프로젝트를 이해할 수 있도록 요약을 생성합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-sm">Claude Code</span>
+                    <CopyButton text="이 프로젝트에 대해 요약해줘" />
+                  </div>
                   <code className="text-blue-400 font-mono">claude{`>`} </code>
-                  <code className="text-white font-mono">summarize this project</code>
+                  <code className="text-white font-mono">이 프로젝트에 대해 요약해줘</code>
                 </div>
               </div>
 
@@ -321,6 +357,10 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">2. CLAUDE.md 파일 생성</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">프로젝트 가이드 파일을 자동으로 생성합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-sm">Claude Code</span>
+                    <CopyButton text="/init" />
+                  </div>
                   <code className="text-blue-400 font-mono">claude{`>`} </code>
                   <code className="text-white font-mono">/init</code>
                 </div>
@@ -333,8 +373,12 @@ export default function GettingStarted() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">3. 변경사항 커밋</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">생성된 CLAUDE.md 파일을 저장소에 추가합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-sm">Claude Code</span>
+                    <CopyButton text="생성된 CLAUDE.md 파일을 커밋해줘" />
+                  </div>
                   <code className="text-blue-400 font-mono">claude{`>`} </code>
-                  <code className="text-white font-mono">commit the generated CLAUDE.md file</code>
+                  <code className="text-white font-mono">생성된 CLAUDE.md 파일을 커밋해줘</code>
                 </div>
               </div>
 
@@ -363,16 +407,16 @@ export default function GettingStarted() {
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">기본 사용법 익히기</h3>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                  <li>• 코드 질문하기: "how does authentication work?"</li>
-                  <li>• 파일 편집하기: "add input validation to the form"</li>
-                  <li>• 테스트 실행하기: "run tests and fix any failures"</li>
+                  <li>• 코드 질문하기: "인증이 어떻게 작동하는지 설명해줘"</li>
+                  <li>• 파일 편집하기: "폼에 입력 검증을 추가해줘"</li>
+                  <li>• 테스트 실행하기: "테스트를 실행하고 실패한 부분을 수정해줘"</li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">고급 기능 탐험</h3>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                  <li>• 확장된 사고: "think about how to architect this feature"</li>
-                  <li>• Git 자동화: "create a pr for this feature"</li>
+                  <li>• 확장된 사고: "이 기능의 아키텍처에 대해 깊이 생각해봐"</li>
+                  <li>• Git 자동화: "이 기능에 대한 PR을 생성해줘"</li>
                   <li>• 웹 검색: Claude가 자동으로 문서를 찾아 참조</li>
                 </ul>
               </div>
@@ -404,10 +448,18 @@ export default function GettingStarted() {
                 <div className="mt-4 p-4 text-slate-600 dark:text-slate-300">
                   <p className="mb-2">WSL에서 Windows npm을 사용하고 있을 수 있습니다. 다음을 시도해보세요:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-2">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">터미널</span>
+                      <CopyButton text="npm config set os linux" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">npm config set os linux</code>
                   </div>
                   <p>또는 강제 설치:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">터미널</span>
+                      <CopyButton text="npm install -g @anthropic-ai/claude-code --force --no-os-check" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">npm install -g @anthropic-ai/claude-code --force --no-os-check</code>
                   </div>
                 </div>
@@ -423,10 +475,18 @@ export default function GettingStarted() {
                 <div className="mt-4 p-4 text-slate-600 dark:text-slate-300">
                   <p className="mb-2">WSL이 Windows Node.js를 사용하고 있을 수 있습니다. 다음으로 확인:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-2">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">터미널</span>
+                      <CopyButton text="which node && which npm" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">which node && which npm</code>
                   </div>
                   <p>경로가 <code>/mnt/c/</code>로 시작한다면 Linux용 Node.js를 설치하세요:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">터미널</span>
+                      <CopyButton text="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash</code>
                   </div>
                 </div>
@@ -442,11 +502,23 @@ export default function GettingStarted() {
                 <div className="mt-4 p-4 text-slate-600 dark:text-slate-300">
                   <p className="mb-2">npm 글로벌 설치 권한을 설정하세요:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-2">
-                    <code className="text-green-400 text-sm">mkdir ~/.npm-global</code><br/>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">터미널</span>
+                      <CopyButton text="mkdir ~/.npm-global" className="scale-75" />
+                    </div>
+                    <code className="text-green-400 text-sm block mb-1">mkdir ~/.npm-global</code>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs invisible">터미널</span>
+                      <CopyButton text="npm config set prefix '~/.npm-global'" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">npm config set prefix '~/.npm-global'</code>
                   </div>
                   <p>그리고 ~/.bashrc 또는 ~/.zshrc에 추가:</p>
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-slate-400 text-xs">설정 파일</span>
+                      <CopyButton text="export PATH=~/.npm-global/bin:$PATH" className="scale-75" />
+                    </div>
                     <code className="text-green-400 text-sm">export PATH=~/.npm-global/bin:$PATH</code>
                   </div>
                 </div>
