@@ -41,7 +41,7 @@ export default function BasicCommands() {
         </div>
 
         {/* Interactive Mode */}
-        <section className="mb-12">
+        <section id="interactive-mode" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
@@ -110,7 +110,7 @@ export default function BasicCommands() {
         </section>
 
         {/* One-shot Mode */}
-        <section className="mb-12">
+        <section id="one-shot-mode" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
@@ -163,7 +163,7 @@ export default function BasicCommands() {
         </section>
 
         {/* Pipe Mode */}
-        <section className="mb-12">
+        <section id="pipe-mode" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">

@@ -49,15 +49,15 @@ export default function UsageGuide() {
               Claude Code의 기본적인 사용 방법과 명령어를 익혀보세요.
             </p>
             <div className="space-y-3">
-              <a href="/usage-guide/basic-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/basic-commands#interactive-mode" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">대화형 모드</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">claude 명령어로 시작하는 대화형 사용법</p>
               </a>
-              <a href="/usage-guide/basic-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/basic-commands#one-shot-mode" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">원샷 모드</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">빠른 명령 실행을 위한 -p 플래그 사용법</p>
               </a>
-              <a href="/usage-guide/basic-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/basic-commands#pipe-mode" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">파이프 모드</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">파일 내용을 Claude에게 직접 전달하는 방법</p>
               </a>
@@ -78,19 +78,19 @@ export default function UsageGuide() {
               일상적인 개발 작업에서 Claude Code를 활용하는 패턴을 알아보세요.
             </p>
             <div className="space-y-3">
-              <a href="/usage-guide/core-workflows" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/core-workflows#code-understanding" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">코드 이해하기</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">프로젝트 분석 및 아키텍처 파악</p>
               </a>
-              <a href="/usage-guide/core-workflows" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/core-workflows#code-editing" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">코드 편집하기</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">스마트 코드 수정 및 리팩토링</p>
               </a>
-              <a href="/usage-guide/core-workflows" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/core-workflows#git-automation" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">Git 자동화</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">커밋, PR 생성, 머지 충돌 해결</p>
               </a>
-              <a href="/usage-guide/core-workflows" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/core-workflows#testing-debugging" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">테스트 & 디버깅</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">테스트 실행 및 오류 수정</p>
               </a>
@@ -111,19 +111,19 @@ export default function UsageGuide() {
               Claude Code의 강력한 고급 기능들을 활용해보세요.
             </p>
             <div className="space-y-3">
-              <a href="/usage-guide/advanced-features" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/advanced-features#extended-thinking" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">확장된 사고</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">복잡한 문제 해결을 위한 깊은 분석</p>
               </a>
-              <a href="/usage-guide/advanced-features" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/advanced-features#memory-management" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">메모리 관리</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">CLAUDE.md를 통한 프로젝트 컨텍스트 관리</p>
               </a>
-              <a href="/usage-guide/advanced-features" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/advanced-features#web-search" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">웹 검색</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">자동 문서 검색 및 참조</p>
               </a>
-              <a href="/usage-guide/advanced-features" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/advanced-features#non-interactive-mode" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">비대화형 모드</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">CI/CD 파이프라인 통합</p>
               </a>
@@ -144,19 +144,19 @@ export default function UsageGuide() {
               명령행 인터페이스의 다양한 옵션과 제어 방법을 익혀보세요.
             </p>
             <div className="space-y-3">
-              <a href="/usage-guide/cli-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/cli-commands#slash-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">슬래시 명령어</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">/init, /help, /memory 등 특수 명령어</p>
               </a>
-              <a href="/usage-guide/cli-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/cli-commands#cli-flags" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">플래그 옵션</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">--allowedTools, --disallowedTools 사용법</p>
               </a>
-              <a href="/usage-guide/cli-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/cli-commands#environment-variables" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">환경 변수</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">API 키 설정 및 모델 선택</p>
               </a>
-              <a href="/usage-guide/cli-commands" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
+              <a href="/usage-guide/cli-commands#security-controls" className="block p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors">
                 <h3 className="font-medium text-slate-900 dark:text-white mb-1">보안 제어</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">도구 권한 및 접근 제어</p>
               </a>

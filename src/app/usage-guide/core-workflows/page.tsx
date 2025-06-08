@@ -41,7 +41,7 @@ export default function CoreWorkflows() {
         </div>
 
         {/* Understanding Code */}
-        <section className="mb-12">
+        <section id="code-understanding" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
@@ -124,7 +124,7 @@ export default function CoreWorkflows() {
         </section>
 
         {/* Code Editing */}
-        <section className="mb-12">
+        <section id="code-editing" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
@@ -204,7 +204,7 @@ export default function CoreWorkflows() {
         </section>
 
         {/* Git Automation */}
-        <section className="mb-12">
+        <section id="git-automation" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
@@ -293,7 +293,7 @@ export default function CoreWorkflows() {
         </section>
 
         {/* Testing & Debugging */}
-        <section className="mb-12">
+        <section id="testing-debugging" className="mb-12">
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-4">

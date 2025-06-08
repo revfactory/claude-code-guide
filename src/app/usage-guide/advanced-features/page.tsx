@@ -41,7 +41,7 @@ export default function AdvancedFeatures() {
           </div>
 
           {/* Extended Thinking */}
-          <section className="mb-12">
+          <section id="extended-thinking" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
@@ -121,7 +121,7 @@ export default function AdvancedFeatures() {
           </section>
 
           {/* Memory Management */}
-          <section className="mb-12">
+          <section id="memory-management" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
@@ -210,7 +210,7 @@ export default function AdvancedFeatures() {
           </section>
 
           {/* Web Search */}
-          <section className="mb-12">
+          <section id="web-search" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
@@ -294,7 +294,7 @@ export default function AdvancedFeatures() {
           </section>
 
           {/* Non-interactive Mode */}
-          <section className="mb-12">
+          <section id="non-interactive-mode" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-4">

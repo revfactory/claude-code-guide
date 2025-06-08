@@ -41,7 +41,7 @@ export default function CLICommands() {
           </div>
 
           {/* Slash Commands */}
-          <section className="mb-12">
+          <section id="slash-commands" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
@@ -134,7 +134,7 @@ export default function CLICommands() {
           </section>
 
           {/* CLI Flags */}
-          <section className="mb-12">
+          <section id="cli-flags" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
@@ -239,7 +239,7 @@ export default function CLICommands() {
           </section>
 
           {/* Environment Variables */}
-          <section className="mb-12">
+          <section id="environment-variables" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
@@ -331,7 +331,7 @@ export default function CLICommands() {
           </section>
 
           {/* Security Controls */}
-          <section className="mb-12">
+          <section id="security-controls" className="mb-12">
             <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mr-4">
