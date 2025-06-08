@@ -124,19 +124,21 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-4">가이드</h3>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-4">학습 가이드</h3>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 방법</a></li>
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 사용법</a></li>
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</a></li>
+                <li><a href="/getting-started" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 및 시작하기</a></li>
+                <li><a href="/usage-guide/basic-commands" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 명령어</a></li>
+                <li><a href="/usage-guide/advanced-features" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</a></li>
+                <li><a href="/tutorials" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">실전 튜토리얼</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">커뮤니티</h3>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">질문 & 답변</a></li>
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">경험 공유</a></li>
-                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">자료실</a></li>
+                <li><a href="/community" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">YouTube 학습 영상</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">팀별 활용 사례</a></li>
+                <li><a href="/community" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub 오픈소스</a></li>
+                <li><a href="/usage-guide/core-workflows" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">핵심 워크플로우</a></li>
               </ul>
             </div>
             <div>
@@ -149,7 +151,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8 text-center text-sm text-slate-600 dark:text-slate-300">
-            © 2024 Claude Code Korea. All rights reserved.
+            © 2025 robin@kakaocorp.com. All rights reserved.
           </div>
         </div>
       </footer>
