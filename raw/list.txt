@@ -1,0 +1,15 @@
+https://docs.anthropic.com/en/docs/claude-code/overview
+https://docs.anthropic.com/en/docs/claude-code/getting-started
+https://docs.anthropic.com/en/docs/claude-code/common-tasks
+https://docs.anthropic.com/en/docs/claude-code/cli-usage
+https://docs.anthropic.com/en/docs/claude-code/ide-integrations
+https://docs.anthropic.com/en/docs/claude-code/memory
+https://docs.anthropic.com/en/docs/claude-code/settings
+https://docs.anthropic.com/en/docs/claude-code/security
+https://docs.anthropic.com/en/docs/claude-code/team
+https://docs.anthropic.com/en/docs/claude-code/monitoring-usage
+https://docs.anthropic.com/en/docs/claude-code/costs
+https://docs.anthropic.com/en/docs/claude-code/github-actions
+https://docs.anthropic.com/en/docs/claude-code/sdk
+https://docs.anthropic.com/en/docs/claude-code/tutorials
+https://docs.anthropic.com/en/docs/claude-code/troubleshooting

@@ -1,102 +1,157 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
+      <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">C</span>
+              </div>
+              <span className="text-xl font-bold text-slate-900 dark:text-white">Claude Code Korea</span>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <a href="/" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">홈</a>
+              <a href="/getting-started" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">시작하기</a>
+              <a href="/usage-guide" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">사용법 가이드</a>
+              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
+              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">커뮤니티</a>
+              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">리소스</a>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main>
+        {/* Hero Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+              AI와 함께하는
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> 스마트한 개발</span>
+            </h1>
+            <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+              Claude Code는 터미널에서 동작하는 AI 코딩 도구입니다. 
+              자연어 명령으로 코드를 편집하고, 버그를 수정하며, 프로젝트를 이해할 수 있습니다.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/getting-started" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all text-center">
+                빠른 시작
+              </a>
+              <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener noreferrer" className="border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center">
+                문서 보기
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">
+              Claude Code의 주요 기능
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">스마트 코드 편집</h3>
+                <p className="text-slate-600 dark:text-slate-300">자연어로 코드 편집 요청하고, AI가 전체 코드베이스를 이해하여 정확한 수정을 수행합니다.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Git 자동화</h3>
+                <p className="text-slate-600 dark:text-slate-300">커밋 생성, PR 작성, 머지 충돌 해결 등 Git 작업을 자연어 명령으로 자동화할 수 있습니다.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">테스트 & 디버깅</h3>
+                <p className="text-slate-600 dark:text-slate-300">테스트 실행, 실패한 테스트 분석 및 수정, 보안 취약점 발견 등을 자동으로 처리합니다.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Install Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
+              5분 만에 시작하기
+            </h2>
+            <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-6 text-left">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-slate-400 text-sm">터미널</span>
+                <button className="text-slate-400 hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </button>
+              </div>
+              <code className="text-green-400 font-mono">
+                npm install -g @anthropic-ai/claude-code
+              </code>
+            </div>
+            <p className="text-slate-600 dark:text-slate-300 mt-4">
+              설치 후 <code className="bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-sm">claude</code> 명령어로 바로 시작할 수 있습니다.
+            </p>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-md flex items-center justify-center">
+                  <span className="text-white font-bold text-xs">C</span>
+                </div>
+                <span className="font-bold text-slate-900 dark:text-white">Claude Code Korea</span>
+              </div>
+              <p className="text-slate-600 dark:text-slate-300 text-sm">
+                한국 개발자를 위한 Claude Code 사용자 모임
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-4">가이드</h3>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 방법</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 사용법</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-4">커뮤니티</h3>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">질문 & 답변</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">경험 공유</a></li>
+                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">자료실</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-4">링크</h3>
+              <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                <li><a href="https://docs.anthropic.com/en/docs/claude-code" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">공식 문서</a></li>
+                <li><a href="https://github.com/anthropics/claude-code" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a></li>
+                <li><a href="https://www.anthropic.com/discord" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Discord</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8 text-center text-sm text-slate-600 dark:text-slate-300">
+            © 2024 Claude Code Korea. All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
   );
