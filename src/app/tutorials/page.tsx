@@ -6,9 +6,12 @@ export default function Tutorials() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
+                <span className="text-white font-bold text-sm">V</span>
               </div>
-              <a href="/" className="text-xl font-bold text-slate-900 dark:text-white">Claude Code Korea</a>
+              <div className="flex flex-col">
+                <a href="/" className="text-xl font-bold text-slate-900 dark:text-white">Hello! Vibe</a>
+                <span className="text-xs text-slate-600 dark:text-slate-400">Claude Code편</span>
+              </div>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="/" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">홈</a>
