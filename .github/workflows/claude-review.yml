@@ -1,0 +1,33 @@
+name: Auto review PRs
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  auto-review:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Auto review PR
+        uses: anthropics/claude-code-action@main
+        with:
+          direct_prompt: |
+            Please review this PR. Look at the changes and provide thoughtful feedback on:
+            - Code quality and best practices
+            - Potential bugs or issues
+            - Suggestions for improvements
+            - Overall architecture and design decisions
+            - Response in Korean
+
+            Be constructive and specific in your feedback. Give inline comments where applicable.
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          allowed_tools: "mcp__github__add_pull_request_review_comment"
