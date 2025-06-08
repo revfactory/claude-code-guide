@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/usage-guide/advanced-features/page": "app/usage-guide/advanced-features/page.js",
+  "/page": "app/page.js",
+  "/usage-guide/basic-commands/page": "app/usage-guide/basic-commands/page.js",
+  "/getting-started/page": "app/getting-started/page.js",
+  "/usage-guide/core-workflows/page": "app/usage-guide/core-workflows/page.js",
+  "/usage-guide/cli-commands/page": "app/usage-guide/cli-commands/page.js",
+  "/usage-guide/page": "app/usage-guide/page.js"
+}

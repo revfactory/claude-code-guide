@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/usage-guide/advanced-features/page": "/usage-guide/advanced-features",
+  "/page": "/",
+  "/usage-guide/basic-commands/page": "/usage-guide/basic-commands",
+  "/getting-started/page": "/getting-started",
+  "/usage-guide/core-workflows/page": "/usage-guide/core-workflows",
+  "/usage-guide/cli-commands/page": "/usage-guide/cli-commands",
+  "/usage-guide/page": "/usage-guide"
+}

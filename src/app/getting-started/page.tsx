@@ -14,9 +14,9 @@ export default function GettingStarted() {
               <a href="/" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">홈</a>
               <a href="/getting-started" className="text-blue-600 dark:text-blue-400 font-medium">시작하기</a>
               <a href="/usage-guide" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">사용법 가이드</a>
-              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
+              <a href="/tutorials" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
               <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">커뮤니티</a>
-              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">리소스</a>
+              <a href="/use-cases" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">활용 사례</a>
             </div>
           </div>
         </nav>
@@ -378,7 +378,7 @@ export default function GettingStarted() {
               <a href="/" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-center">
                 홈으로 돌아가기
               </a>
-              <a href="#" className="border border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center">
+              <a href="/use-cases" className="border border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center">
                 실전 튜토리얼
               </a>
             </div>
@@ -452,7 +452,7 @@ export default function GettingStarted() {
 
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-blue-800 dark:text-blue-200">
-                더 많은 문제 해결 방법은 <a href="#" className="font-medium hover:underline">문제 해결 가이드</a>를 참고하세요.
+                더 많은 문제 해결 방법은 <a href="/use-cases" className="font-medium hover:underline">문제 해결 가이드</a>를 참고하세요.
               </p>
             </div>
           </div>

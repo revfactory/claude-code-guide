@@ -14,9 +14,9 @@ export default function Home() {
               <a href="/" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">홈</a>
               <a href="/getting-started" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">시작하기</a>
               <a href="/usage-guide" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">사용법 가이드</a>
-              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
+              <a href="/tutorials" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
               <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">커뮤니티</a>
-              <a href="#" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">리소스</a>
+              <a href="/use-cases" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">활용 사례</a>
             </div>
           </div>
         </nav>
@@ -126,17 +126,17 @@ export default function Home() {
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">가이드</h3>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 방법</a></li>
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 사용법</a></li>
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 방법</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 사용법</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-4">커뮤니티</h3>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">질문 & 답변</a></li>
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">경험 공유</a></li>
-                <li><a href="#" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">자료실</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">질문 & 답변</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">경험 공유</a></li>
+                <li><a href="/use-cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">자료실</a></li>
               </ul>
             </div>
             <div>
