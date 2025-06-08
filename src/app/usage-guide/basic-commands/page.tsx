@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function BasicCommands() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -63,18 +99,18 @@ export default function BasicCommands() {
             <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-slate-400 text-sm">터미널</span>
-                <button className="text-slate-400 hover:text-white transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </button>
+                <CopyButton text="claude" />
               </div>
               <code className="text-green-400 font-mono">claude</code>
             </div>
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">초기 질문과 함께 시작</h3>
             <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-6">
-              <code className="text-green-400 font-mono">claude "explain this project"</code>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-slate-400 text-sm">터미널</span>
+                <CopyButton text='claude \"이 프로젝트를 설명해줘\"' />
+              </div>
+              <code className="text-green-400 font-mono">claude "이 프로젝트를 설명해줘"</code>
             </div>
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">사용 예제</h3>
@@ -82,24 +118,36 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">프로젝트 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-xs">Claude Code</span>
+                    <CopyButton text="이 코드베이스를 요약해줘" className="scale-75" />
+                  </div>
                   <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                  <code className="text-white font-mono text-sm">summarize this codebase</code>
+                  <code className="text-white font-mono text-sm">이 코드베이스를 요약해줘</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 질문</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-xs">Claude Code</span>
+                    <CopyButton text="인증 시스템이 어떻게 작동하는지 설명해줘" className="scale-75" />
+                  </div>
                   <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                  <code className="text-white font-mono text-sm">how does the authentication system work?</code>
+                  <code className="text-white font-mono text-sm">인증 시스템이 어떻게 작동하는지 설명해줘</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 수정</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-slate-400 text-xs">Claude Code</span>
+                    <CopyButton text="API 엔드포인트에 에러 처리를 추가해줘" className="scale-75" />
+                  </div>
                   <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                  <code className="text-white font-mono text-sm">add error handling to the API endpoints</code>
+                  <code className="text-white font-mono text-sm">API 엔드포인트에 에러 처리를 추가해줘</code>
                 </div>
               </div>
             </div>
@@ -130,7 +178,11 @@ export default function BasicCommands() {
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">기본 사용법</h3>
             <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-6">
-              <code className="text-green-400 font-mono">claude -p "what does this function do?"</code>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-slate-400 text-sm">터미널</span>
+                <CopyButton text='claude -p \"이 함수가 무엇을 하는지 설명해줘\"' />
+              </div>
+              <code className="text-green-400 font-mono">claude -p "이 함수가 무엇을 하는지 설명해줘"</code>
             </div>
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">실용적인 예제</h3>
@@ -138,21 +190,33 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">빠른 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">claude -p "count the number of API endpoints"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='claude -p \"API 엔드포인트 개수를 세어줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">claude -p "API 엔드포인트 개수를 세어줘"</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">간단한 수정</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">claude -p "fix the typo in README.md"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='claude -p \"README.md의 오타를 수정해줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">claude -p "README.md의 오타를 수정해줘"</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">Git 작업</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">claude -p "create a commit for the bug fix"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='claude -p \"버그 수정에 대한 커밋을 생성해줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">claude -p "버그 수정에 대한 커밋을 생성해줘"</code>
                 </div>
               </div>
             </div>
@@ -183,7 +247,11 @@ export default function BasicCommands() {
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">기본 문법</h3>
             <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-6">
-              <code className="text-green-400 font-mono">cat file.txt | claude -p "analyze this content"</code>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-slate-400 text-sm">터미널</span>
+                <CopyButton text='cat file.txt | claude -p \"이 내용을 분석해줘\"' />
+              </div>
+              <code className="text-green-400 font-mono">cat file.txt | claude -p "이 내용을 분석해줘"</code>
             </div>
 
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">다양한 활용 방법</h3>
@@ -191,28 +259,44 @@ export default function BasicCommands() {
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">로그 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">cat server.log | claude -p "find error patterns"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='cat server.log | claude -p \"에러 패턴을 찾아줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">cat server.log | claude -p "에러 패턴을 찾아줘"</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">Git 히스토리 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">git log --oneline | claude -p "summarize recent changes"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='git log --oneline | claude -p \"최근 변경사항을 요약해줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">git log --oneline | claude -p "최근 변경사항을 요약해줘"</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">테스트 결과 분석</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">npm test 2{`>`}&amp;1 | claude -p "explain test failures"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='npm test 2>&1 | claude -p \"테스트 실패 원인을 설명해줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">npm test 2{`>`}&amp;1 | claude -p "테스트 실패 원인을 설명해줘"</code>
                 </div>
               </div>
               
               <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                 <h4 className="font-medium text-slate-900 dark:text-white mb-2">파일 비교</h4>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
-                  <code className="text-green-400 font-mono text-sm">diff old.js new.js | claude -p "explain the changes"</code>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-slate-400 text-xs">터미널</span>
+                    <CopyButton text='diff old.js new.js | claude -p \"변경사항을 설명해줘\"' className="scale-75" />
+                  </div>
+                  <code className="text-green-400 font-mono text-sm">diff old.js new.js | claude -p "변경사항을 설명해줘"</code>
                 </div>
               </div>
             </div>

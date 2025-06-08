@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function CLICommands() {
   return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -64,6 +100,10 @@ export default function CLICommands() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-2">/init</h3>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="/init" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">/init</code>
                     </div>
@@ -75,6 +115,10 @@ export default function CLICommands() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-2">/help</h3>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="/help" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">/help</code>
                     </div>
@@ -86,6 +130,10 @@ export default function CLICommands() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-2">/memory</h3>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="/memory" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">/memory</code>
                     </div>
@@ -97,6 +145,10 @@ export default function CLICommands() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-2">/exit</h3>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="/exit" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                       <code className="text-white font-mono text-sm">/exit</code>
                     </div>
@@ -112,6 +164,10 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">/model [모델명]</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="/model claude-3-5-sonnet-20241022" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                         <code className="text-white font-mono text-sm">/model claude-3-5-sonnet-20241022</code>
                       </div>
@@ -123,6 +179,10 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">/clear</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="/clear" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                         <code className="text-white font-mono text-sm">/clear</code>
                       </div>
@@ -159,7 +219,11 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">-p, --print</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
-                        <code className="text-green-400 font-mono text-sm">claude -p "analyze this codebase"</code>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude -p \"이 코드베이스를 분석해줘\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-sm">claude -p "이 코드베이스를 분석해줘"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         비대화형 모드로 실행합니다. 한 번의 명령 후 종료됩니다.
@@ -169,7 +233,11 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">--model</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
-                        <code className="text-green-400 font-mono text-sm">claude --model claude-3-5-sonnet-20241022 "help me debug this"</code>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude --model claude-3-5-sonnet-20241022 \"디버깅을 도와줘\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-sm">claude --model claude-3-5-sonnet-20241022 "디버깅을 도와줘"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         특정 Claude 모델을 지정하여 실행합니다.
@@ -179,6 +247,10 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">--version</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text="claude --version" className="scale-75" />
+                        </div>
                         <code className="text-green-400 font-mono text-sm">claude --version</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -194,7 +266,11 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">--allowedTools</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
-                        <code className="text-green-400 font-mono text-sm">claude -p "review code" --allowedTools "Read" "Grep"</code>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude -p \"코드를 리뷰해줘\" --allowedTools \"Read\" \"Grep\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-sm">claude -p "코드를 리뷰해줘" --allowedTools "Read" "Grep"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         Claude가 사용할 수 있는 도구를 제한합니다.
@@ -204,7 +280,11 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">--disallowedTools</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
-                        <code className="text-green-400 font-mono text-sm">claude -p "analyze logs" --disallowedTools "Bash" "Write"</code>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude -p \"로그를 분석해줘\" --disallowedTools \"Bash\" \"Write\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-sm">claude -p "로그를 분석해줘" --disallowedTools "Bash" "Write"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         특정 도구의 사용을 금지합니다.
@@ -219,6 +299,10 @@ export default function CLICommands() {
                     <h4 className="font-medium text-slate-900 dark:text-white mb-3">Bash 명령어 제한</h4>
                     <div className="space-y-2">
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='--allowedTools \"Bash(git log:*)\" \"Bash(git diff:*)\"' className="scale-75" />
+                        </div>
                         <code className="text-green-400 font-mono text-sm">--allowedTools "Bash(git log:*)" "Bash(git diff:*)"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -265,6 +349,10 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">ANTHROPIC_API_KEY</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text="export ANTHROPIC_API_KEY=sk_..." className="scale-75" />
+                        </div>
                         <code className="text-green-400 font-mono text-sm">export ANTHROPIC_API_KEY=sk_...</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -275,6 +363,10 @@ export default function CLICommands() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">ANTHROPIC_BASE_URL</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text="export ANTHROPIC_BASE_URL=https://api.anthropic.com" className="scale-75" />
+                        </div>
                         <code className="text-green-400 font-mono text-sm">export ANTHROPIC_BASE_URL=https://api.anthropic.com</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -289,6 +381,10 @@ export default function CLICommands() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">ANTHROPIC_MODEL</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">터미널</span>
+                        <CopyButton text="export ANTHROPIC_MODEL=claude-3-5-sonnet-20241022" className="scale-75" />
+                      </div>
                       <code className="text-green-400 font-mono text-sm">export ANTHROPIC_MODEL=claude-3-5-sonnet-20241022</code>
                     </div>
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-3">

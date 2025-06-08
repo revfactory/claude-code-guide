@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function AdvancedFeatures() {
   return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -66,13 +102,21 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">기본 사고 요청</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                        <code className="text-green-400 font-mono text-xs">think about how to architect this feature</code>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="이 기능을 어떻게 설계할지 생각해봐" className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-xs">이 기능을 어떻게 설계할지 생각해봐</code>
                       </div>
                     </div>
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">깊은 사고 요청</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                        <code className="text-green-400 font-mono text-xs">think hard about the edge cases</code>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="엣지 케이스에 대해 심각하게 생각해봐" className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-xs">엣지 케이스에 대해 심각하게 생각해봐</code>
                       </div>
                     </div>
                   </div>
@@ -87,24 +131,36 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">아키텍처 설계</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="새로운 결제 서비스를 어떻게 설계할지 생각해봐" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">think about how we should architect the new payment service</code>
+                        <code className="text-white font-mono text-sm">새로운 결제 서비스를 어떻게 설계할지 생각해봐</code>
                       </div>
                     </div>
 
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">보안 검토</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="이 API의 보안 영향에 대해 심각하게 생각해봐" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">think hard about the security implications of this API</code>
+                        <code className="text-white font-mono text-sm">이 API의 보안 영향에 대해 심각하게 생각해봐</code>
                       </div>
                     </div>
 
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">성능 최적화</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="이 코드의 성능 병목에 대해 깊이 생각해봐" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">think deeply about performance bottlenecks in this code</code>
+                        <code className="text-white font-mono text-sm">이 코드의 성능 병목에 대해 깊이 생각해봐</code>
                       </div>
                     </div>
                   </div>
@@ -146,6 +202,10 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">자동 생성</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="/init" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                         <code className="text-white font-mono text-sm">/init</code>
                       </div>
@@ -157,6 +217,10 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">메모리 확인</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="/memory" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
                         <code className="text-white font-mono text-sm">/memory</code>
                       </div>
@@ -235,24 +299,36 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">프레임워크 문서 참조</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="최신 React hooks 베스트 프랙티스를 알려줘" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">show me the latest React hooks best practices</code>
+                        <code className="text-white font-mono text-sm">최신 React hooks 베스트 프랙티스를 알려줘</code>
                       </div>
                     </div>
 
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">라이브러리 사용법</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="API 호출을 위해 최신 버전의 axios를 사용하는 방법" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">how to use the latest version of axios for API calls</code>
+                        <code className="text-white font-mono text-sm">API 호출을 위해 최신 버전의 axios를 사용하는 방법</code>
                       </div>
                     </div>
 
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">오류 해결</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-slate-400 text-xs">Claude Code</span>
+                          <CopyButton text="이 TypeScript 오류에 대한 해결책을 찾아줘" className="scale-75" />
+                        </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">find solutions for this TypeScript error</code>
+                        <code className="text-white font-mono text-sm">이 TypeScript 오류에 대한 해결책을 찾아줘</code>
                       </div>
                     </div>
                   </div>
@@ -318,8 +394,12 @@ export default function AdvancedFeatures() {
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">기본 비대화형 모드</h3>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">터미널</span>
+                        <CopyButton text='export ANTHROPIC_API_KEY=sk_...\nclaude -p \"최신 변경사항으로 README를 업데이트해줘\"' className="scale-75" />
+                      </div>
                       <code className="text-green-400 font-mono text-sm">export ANTHROPIC_API_KEY=sk_...</code><br/>
-                      <code className="text-green-400 font-mono text-sm">claude -p "update the README with the latest changes"</code>
+                      <code className="text-green-400 font-mono text-sm">claude -p "최신 변경사항으로 README를 업데이트해줘"</code>
                     </div>
                     <p className="text-slate-600 dark:text-slate-300 text-sm">
                       환경 변수로 API 키를 설정하고 <code>-p</code> 플래그로 비대화형 실행
@@ -333,14 +413,22 @@ export default function AdvancedFeatures() {
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">허용된 도구만 사용</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                        <code className="text-green-400 font-mono text-xs">claude -p "analyze git history" --allowedTools "Bash(git log:*)" "Bash(git diff:*)"</code>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude -p \"git 히스토리를 분석해줘\" --allowedTools \"Bash(git log:*)\" \"Bash(git diff:*)\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-xs">claude -p "git 히스토리를 분석해줘" --allowedTools "Bash(git log:*)" "Bash(git diff:*)"</code>
                       </div>
                     </div>
 
                     <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                       <h4 className="font-medium text-slate-900 dark:text-white mb-2">특정 도구 비활성화</h4>
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                        <code className="text-green-400 font-mono text-xs">claude -p "review code" --disallowedTools "WebFetch"</code>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-slate-400 text-xs">터미널</span>
+                          <CopyButton text='claude -p \"코드를 리뷰해줘\" --disallowedTools \"WebFetch\"' className="scale-75" />
+                        </div>
+                        <code className="text-green-400 font-mono text-xs">claude -p "코드를 리뷰해줘" --disallowedTools "WebFetch"</code>
                       </div>
                     </div>
                   </div>

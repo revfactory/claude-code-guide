@@ -29,10 +29,10 @@ export default function UseCases() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Anthropic 팀별 Claude Code 활용 사례
+            Claude Code 활용 사례
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto">
-            Anthropic 내부 팀들이 실제로 Claude Code를 어떻게 활용하여 업무 효율성을 극대화하고 있는지 심층적으로 알아보세요.
+            Claude Code를 어떻게 활용하여 조직의 업무 효율성을 극대화하고 있는지 심층적으로 알아보세요.
           </p>
           <div className="mt-6 text-sm text-slate-500 dark:text-slate-400">
             <em>본 내용은 Anthropic 내부 보고서 "How Anthropic teams use Claude Code"(2025)를 기반으로 재구성하였습니다.</em>

@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function CoreWorkflows() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -64,8 +100,12 @@ export default function CoreWorkflows() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">프로젝트 전체 분석</h3>
                 <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 mb-3">
                   <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400 text-xs">Claude Code</span>
+                      <CopyButton text="이 프로젝트를 요약해줘" className="scale-75" />
+                    </div>
                     <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                    <code className="text-white font-mono text-sm">summarize this project</code>
+                    <code className="text-white font-mono text-sm">이 프로젝트를 요약해줘</code>
                   </div>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -79,25 +119,41 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">인증 시스템</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">how does our authentication system work?</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="우리 인증 시스템이 어떻게 작동하는지 설명해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">우리 인증 시스템이 어떻게 작동하는지 설명해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">데이터베이스 구조</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">explain the database schema</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="데이터베이스 스키마를 설명해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">데이터베이스 스키마를 설명해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">API 엔드포인트</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">list all API endpoints and their purposes</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="API 엔드포인트를 모두 나열하고 용도를 설명해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">API 엔드포인트를 모두 나열하고 용도를 설명해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">결제 처리</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">explain the payment processing flow</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="결제 처리 흐름을 설명해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">결제 처리 흐름을 설명해줘</code>
                     </div>
                   </div>
                 </div>
@@ -109,15 +165,23 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">특정 기능 찾기</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="사용자 권한을 검사하는 부분을 찾아줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">find where user permissions are checked</code>
+                      <code className="text-white font-mono text-sm">사용자 권한을 검사하는 부분을 찾아줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">의존성 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="User 모델에 의존하는 파일들은 무엇인가?" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">what files depend on the User model?</code>
+                      <code className="text-white font-mono text-sm">User 모델에 의존하는 파일들은 무엇인가?</code>
                     </div>
                   </div>
                 </div>
@@ -149,25 +213,41 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">기능 추가</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">add input validation to the signup form</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="회원가입 폼에 입력 검증을 추가해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">회원가입 폼에 입력 검증을 추가해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">오류 처리</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">add error handling to API calls</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="API 호출에 에러 처리를 추가해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">API 호출에 에러 처리를 추가해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">성능 개선</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">optimize the database queries</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="데이터베이스 쿼리를 최적화해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">데이터베이스 쿼리를 최적화해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">보안 강화</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">add CSRF protection to forms</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="폼에 CSRF 보호를 추가해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">폼에 CSRF 보호를 추가해줘</code>
                     </div>
                   </div>
                 </div>
@@ -179,15 +259,23 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">코드 구조 개선</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="UserService를 의존성 주입을 사용하도록 리팩토링해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">refactor the UserService to use dependency injection</code>
+                      <code className="text-white font-mono text-sm">UserService를 의존성 주입을 사용하도록 리팩토링해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">중복 코드 제거</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="공통 검증 로직을 헬퍼로 추출해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">extract common validation logic into a helper</code>
+                      <code className="text-white font-mono text-sm">공통 검증 로직을 헬퍼로 추출해줘</code>
                     </div>
                   </div>
                 </div>
@@ -229,25 +317,41 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">커밋 생성</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">commit my changes</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="내 변경사항을 커밋해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">내 변경사항을 커밋해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">브랜치 생성</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">create a feature branch for user settings</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="사용자 설정을 위한 기능 브랜치를 생성해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">사용자 설정을 위한 기능 브랜치를 생성해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">PR 생성</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">create a pr</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="PR을 생성해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">PR을 생성해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">히스토리 검색</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">which commit added tests for markdown?</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="markdown 테스트를 추가한 커밋은 어느 것인가?" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">markdown 테스트를 추가한 커밋은 어느 것인가?</code>
                     </div>
                   </div>
                 </div>
@@ -259,15 +363,23 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">머지 충돌 해결</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="main에 리베이스하고 머지 충돌을 해결해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">rebase on main and resolve any merge conflicts</code>
+                      <code className="text-white font-mono text-sm">main에 리베이스하고 머지 충돌을 해결해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">변경사항 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="마지막 릴리스 이후 변경사항을 분석해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">analyze the changes since last release</code>
+                      <code className="text-white font-mono text-sm">마지막 릴리스 이후 변경사항을 분석해줘</code>
                     </div>
                   </div>
                 </div>
@@ -281,10 +393,18 @@ export default function CoreWorkflows() {
                   </p>
                   <div className="space-y-2">
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-slate-400 text-xs">터미널</span>
+                        <CopyButton text="claude commit" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude commit</code>
                       <span className="text-slate-400 text-sm ml-2">- 스마트 커밋 메시지 생성</span>
                     </div>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-slate-400 text-xs">터미널</span>
+                        <CopyButton text="claude pr" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude pr</code>
                       <span className="text-slate-400 text-sm ml-2">- PR 생성 및 설명 자동 작성</span>
                     </div>
@@ -318,25 +438,41 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">전체 테스트</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">run all tests and fix failures</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="모든 테스트를 실행하고 실패를 수정해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">모든 테스트를 실행하고 실패를 수정해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">특정 모듈</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">run tests for the auth module</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="auth 모듈 테스트를 실행해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">auth 모듈 테스트를 실행해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">테스트 작성</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">write tests for the new API endpoint</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="새 API 엔드포인트에 대한 테스트를 작성해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">새 API 엔드포인트에 대한 테스트를 작성해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">커버리지 확인</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-xs">check test coverage and improve it</code>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="테스트 커버리지를 확인하고 개선해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-xs">테스트 커버리지를 확인하고 개선해줘</code>
                     </div>
                   </div>
                 </div>
@@ -348,22 +484,34 @@ export default function CoreWorkflows() {
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">테스트 실패 분석</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="이 테스트가 실패하는 이유를 설명해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">explain why this test is failing</code>
+                      <code className="text-white font-mono text-sm">이 테스트가 실패하는 이유를 설명해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">런타임 오류 해결</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="워커 큐의 레이스 컨디션을 수정해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">fix the race condition in the worker queue</code>
+                      <code className="text-white font-mono text-sm">워커 큐의 레이스 컨디션을 수정해줘</code>
                     </div>
                   </div>
                   <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                     <h4 className="font-medium text-slate-900 dark:text-white mb-2">보안 취약점 검사</h4>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="보안 취약점을 찾고 수정해줘" className="scale-75" />
+                      </div>
                       <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                      <code className="text-white font-mono text-sm">find and fix security vulnerabilities</code>
+                      <code className="text-white font-mono text-sm">보안 취약점을 찾고 수정해줘</code>
                     </div>
                   </div>
                 </div>
@@ -374,13 +522,25 @@ export default function CoreWorkflows() {
                 <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
                   <div className="space-y-2">
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-sm">run lint and fix all issues</code>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="린트를 실행하고 모든 문제를 수정해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-sm">린트를 실행하고 모든 문제를 수정해줘</code>
                     </div>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-sm">check code style and format files</code>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="코드 스타일을 검사하고 파일을 포맷해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-sm">코드 스타일을 검사하고 파일을 포맷해줘</code>
                     </div>
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2">
-                      <code className="text-green-400 font-mono text-sm">analyze code complexity and suggest improvements</code>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-slate-400 text-xs">Claude Code</span>
+                        <CopyButton text="코드 복잡도를 분석하고 개선안을 제안해줘" className="scale-75" />
+                      </div>
+                      <code className="text-green-400 font-mono text-sm">코드 복잡도를 분석하고 개선안을 제안해줘</code>
                     </div>
                   </div>
                 </div>
@@ -399,23 +559,23 @@ export default function CoreWorkflows() {
                 <ol className="space-y-3 text-slate-600 dark:text-slate-300">
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">1</span>
-                    <span>프로젝트 이해: "summarize this codebase"</span>
+                    <span>프로젝트 이해: "이 코드베이스를 요약해줘"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">2</span>
-                    <span>기능 구현: "add user authentication"</span>
+                    <span>기능 구현: "사용자 인증을 추가해줘"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">3</span>
-                    <span>테스트 작성: "write tests for the new feature"</span>
+                    <span>테스트 작성: "새 기능에 대한 테스트를 작성해줘"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">4</span>
-                    <span>검증: "run tests and fix failures"</span>
+                    <span>검증: "테스트를 실행하고 실패를 수정해줘"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">5</span>
-                    <span>커밋: "commit my changes"</span>
+                    <span>커밋: "내 변경사항을 커밋해줘"</span>
                   </li>
                 </ol>
               </div>

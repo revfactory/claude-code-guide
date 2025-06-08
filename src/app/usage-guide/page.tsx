@@ -1,3 +1,39 @@
+'use client';
+
+import { useState } from 'react';
+
+function CopyButton({ text, className = "" }: { text: string; className?: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('클립보드 복사 실패:', err);
+    }
+  };
+
+  return (
+    <button
+      onClick={copyToClipboard}
+      className={`text-slate-400 hover:text-white transition-colors ${className}`}
+      title="클립보드에 복사"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export default function UsageGuide() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
@@ -174,23 +210,39 @@ export default function UsageGuide() {
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">기본 질문하기</h3>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-slate-400 text-sm">Claude Code</span>
+                  <CopyButton text="우리 인증 시스템이 어떻게 작동하는지 설명해줘" />
+                </div>
                 <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                <code className="text-white font-mono text-sm">how does our authentication system work?</code>
+                <code className="text-white font-mono text-sm">우리 인증 시스템이 어떻게 작동하는지 설명해줘</code>
               </div>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-slate-400 text-sm">Claude Code</span>
+                  <CopyButton text="결제 처리 흐름을 설명해줘" />
+                </div>
                 <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                <code className="text-white font-mono text-sm">explain the payment processing flow</code>
+                <code className="text-white font-mono text-sm">결제 처리 흐름을 설명해줘</code>
               </div>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">코드 수정하기</h3>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4 mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-slate-400 text-sm">Claude Code</span>
+                  <CopyButton text="회원가입 폼에 입력 검증을 추가해줘" />
+                </div>
                 <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                <code className="text-white font-mono text-sm">add input validation to the signup form</code>
+                <code className="text-white font-mono text-sm">회원가입 폼에 입력 검증을 추가해줘</code>
               </div>
               <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-slate-400 text-sm">Claude Code</span>
+                  <CopyButton text="워커 큐의 레이스 컨디션을 수정해줘" />
+                </div>
                 <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                <code className="text-white font-mono text-sm">fix the race condition in the worker queue</code>
+                <code className="text-white font-mono text-sm">워커 큐의 레이스 컨디션을 수정해줘</code>
               </div>
             </div>
           </div>

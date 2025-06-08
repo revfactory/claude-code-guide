@@ -378,7 +378,7 @@ export default function GettingStarted() {
                     <CopyButton text="생성된 CLAUDE.md 파일을 커밋해줘" />
                   </div>
                   <code className="text-blue-400 font-mono">claude{`>`} </code>
-                  <code className="text-white font-mono">생성된 CLAUDE.md 파일을 커밋해줘</code>
+                  <code className="text-white font-mono">CLAUDE.md 파일을 커밋해줘</code>
                 </div>
               </div>
 
