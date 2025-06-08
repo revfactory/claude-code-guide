@@ -1,0 +1,52 @@
+# License
+
+This project contains two types of content with different licensing terms:
+
+## 1. Source Code - MIT License
+
+Copyright (c) 2025 robin.hwang@kakaocorp.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## 2. Content and Documentation - All Rights Reserved
+
+Copyright (c) 2025 robin.hwang@kakaocorp.com
+
+All website content, documentation, tutorials, guides, and educational materials 
+(located in `/raw/`, `/src/app/` pages content, and other documentation files) 
+are protected by copyright and are NOT covered by the MIT License above.
+
+### Permitted Uses:
+- Personal use and learning
+- Educational purposes in non-commercial settings
+- Sharing links to the original content at hellovibe.io
+- Creating derivative works for personal learning (with proper attribution)
+
+### Prohibited Uses:
+- Commercial redistribution or republication
+- Creating commercial derivatives or adaptations
+- Bulk downloading or scraping for commercial purposes
+- Republishing content on other websites without permission
+- Selling or monetizing the content in any form
+
+### Attribution Requirements:
+When referencing or quoting the content, please provide proper attribution:
+"Source: Hello! Vibe Claude Code편 (hellovibe.io) by robin.hwang@kakaocorp.com"
+
+For commercial use or redistribution permissions, please contact: robin.hwang@kakaocorp.com

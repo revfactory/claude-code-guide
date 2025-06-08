@@ -162,7 +162,10 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-200 dark:border-slate-700 mt-8 pt-8 text-center text-sm text-slate-600 dark:text-slate-300">
-            © 2025 robin.hwang@kakaocorp.com. All rights reserved.
+            <p>© 2025 robin.hwang@kakaocorp.com. All rights reserved.</p>
+            <p className="mt-2 text-xs">
+              컨텐츠 무단 복제 및 상업적 재배포 금지 | 소스 코드는 MIT 라이선스
+            </p>
           </div>
         </div>
       </footer>
