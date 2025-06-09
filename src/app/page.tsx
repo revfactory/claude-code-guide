@@ -23,6 +23,10 @@ export default function Home() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleCloseButtonClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   // Keyboard navigation support
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -109,7 +113,7 @@ export default function Home() {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
-                onClick={isMobileMenuOpen ? closeMobileMenu : toggleMobileMenu}
+                onClick={isMobileMenuOpen ? handleCloseButtonClick : toggleMobileMenu}
                 className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 touch-manipulation"
                 aria-expanded={isMobileMenuOpen}
                 aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
