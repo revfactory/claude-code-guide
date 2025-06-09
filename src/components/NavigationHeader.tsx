@@ -23,7 +23,7 @@ export default function NavigationHeader({
     <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">V</span>
             </div>
@@ -31,7 +31,7 @@ export default function NavigationHeader({
               <span className="text-xl font-bold text-slate-900 dark:text-white">Hello! Vibe</span>
               <span className="text-xs text-slate-600 dark:text-slate-400">Claude Code편</span>
             </div>
-          </div>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -58,7 +58,11 @@ export default function NavigationHeader({
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={onMobileMenuToggle}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onMobileMenuToggle();
+              }}
               className="relative z-50 inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 touch-manipulation"
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
