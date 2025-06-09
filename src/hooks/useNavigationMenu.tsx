@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 export interface MobileMenuState {
   isOpen: boolean;
   toggle: () => void;
-  close: () => void;
   onLinkClick: () => void;
   menuRef: MutableRefObject<HTMLDivElement | null>;
 }
@@ -28,11 +27,10 @@ export const useNavigationMenu = (): UseNavigationMenuReturn => {
 
   // 모바일 메뉴 제어 함수들
   const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev);
-  }, []);
-
-  const closeMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(false);
+    setIsMobileMenuOpen(prev => {
+      console.log(prev);
+      return !prev
+    });
   }, []);
 
   const handleLinkClick = useCallback(() => {
@@ -68,14 +66,23 @@ export const useNavigationMenu = (): UseNavigationMenuReturn => {
   // 외부 클릭 감지
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsMobileMenuOpen(false);
+      const target = e.target as Node;
+      
+      // 메뉴 내부나 토글 버튼 클릭은 무시
+      if (menuRef.current && !menuRef.current.contains(target)) {
+        // 모바일 메뉴 버튼 클릭인지 확인
+        const toggleButton = (target as Element).closest('button[aria-expanded]');
+        if (!toggleButton) {
+          setIsMobileMenuOpen(false);
+        }
       }
     };
 
     if (isMobileMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
     }
   }, [isMobileMenuOpen]);
 
@@ -83,7 +90,6 @@ export const useNavigationMenu = (): UseNavigationMenuReturn => {
     mobileMenu: {
       isOpen: isMobileMenuOpen,
       toggle: toggleMobileMenu,
-      close: closeMobileMenu,
       onLinkClick: handleLinkClick,
       menuRef,
     },
