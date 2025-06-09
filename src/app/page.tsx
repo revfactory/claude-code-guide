@@ -1,68 +1,27 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import NavigationHeader from '../components/NavigationHeader';
+import MobileMenu from '../components/MobileMenu';
+import { useNavigationMenu } from '../hooks/useNavigationMenu';
 
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleLinkClick = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleCloseButtonClick = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  // Keyboard navigation support
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    if (isMobileMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
-    }
-  }, [isMobileMenuOpen]);
-
-  // Outside click detection
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    if (isMobileMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [isMobileMenuOpen]);
+  const { mobileMenu, helpers } = useNavigationMenu();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
       <NavigationHeader
-        isMobileMenuOpen={isMobileMenuOpen}
-        toggleMobileMenu={toggleMobileMenu}
-        handleCloseButtonClick={handleCloseButtonClick}
-        handleLinkClick={handleLinkClick}
-        menuRef={menuRef}
-      />
+        isMobileMenuOpen={mobileMenu.isOpen}
+        onMobileMenuToggle={mobileMenu.toggle}
+        getLinkClassName={helpers.getLinkClassName}
+      >
+        <MobileMenu
+          isOpen={mobileMenu.isOpen}
+          onLinkClick={mobileMenu.onLinkClick}
+          getLinkClassName={helpers.getLinkClassName}
+          menuRef={mobileMenu.menuRef}
+        />
+      </NavigationHeader>
 
       <main>
         {/* Hero Section */}
