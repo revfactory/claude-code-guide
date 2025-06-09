@@ -101,7 +101,7 @@ export default function Home() {
               <button
                 onClick={toggleMobileMenu}
                 className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-                aria-expanded={isMobileMenuOpen.toString()}
+                aria-expanded={isMobileMenuOpen}
               >
                 <span className="sr-only">메뉴 열기</span>
                 {!isMobileMenuOpen ? (
