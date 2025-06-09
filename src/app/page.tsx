@@ -114,7 +114,7 @@ export default function Home() {
             <div className="md:hidden">
               <button
                 onClick={isMobileMenuOpen ? handleCloseButtonClick : toggleMobileMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 touch-manipulation"
+                className="relative z-50 inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 touch-manipulation"
                 aria-expanded={isMobileMenuOpen}
                 aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
               >
@@ -135,7 +135,7 @@ export default function Home() {
           {/* Mobile Menu */}
           <div 
             ref={menuRef}
-            className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            className={`md:hidden relative z-40 transition-all duration-300 ease-in-out overflow-hidden ${
               isMobileMenuOpen 
                 ? 'max-h-96 opacity-100' 
                 : 'max-h-0 opacity-0'
