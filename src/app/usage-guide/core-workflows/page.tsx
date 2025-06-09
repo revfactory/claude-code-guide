@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import NavigationHeader from '@/components/NavigationHeader';
+import MobileMenu from '@/components/MobileMenu';
+import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 function CopyButton({ text, className = "" }: { text: string; className?: string }) {
   const [copied, setCopied] = useState(false);
@@ -35,31 +38,22 @@ function CopyButton({ text, className = "" }: { text: string; className?: string
 }
 
 export default function CoreWorkflows() {
+  const { mobileMenu, helpers } = useNavigationMenu();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-zinc-100 dark:from-slate-900 dark:to-zinc-900">
-      <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">V</span>
-              </div>
-              <div className="flex flex-col">
-                <a href="/" className="text-xl font-bold text-slate-900 dark:text-white">Hello! Vibe</a>
-                <span className="text-xs text-slate-600 dark:text-slate-400">Claude Code편</span>
-              </div>
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">홈</a>
-              <a href="/getting-started" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">시작하기</a>
-              <a href="/usage-guide" className="text-blue-600 dark:text-blue-400 font-medium">사용법 가이드</a>
-              <a href="/tutorials" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">튜토리얼</a>
-              <a href="/community" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">커뮤니티</a>
-              <a href="/use-cases" className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">활용 사례</a>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <NavigationHeader
+        isMobileMenuOpen={mobileMenu.isOpen}
+        onMobileMenuToggle={mobileMenu.toggle}
+        getLinkClassName={helpers.getLinkClassName}
+      >
+        <MobileMenu
+          isOpen={mobileMenu.isOpen}
+          onLinkClick={mobileMenu.onLinkClick}
+          getLinkClassName={helpers.getLinkClassName}
+          menuRef={mobileMenu.menuRef}
+        />
+      </NavigationHeader>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Breadcrumb */}
