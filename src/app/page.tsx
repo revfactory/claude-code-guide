@@ -13,6 +13,12 @@ export default function Home() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsMobileMenuOpen(false);
+  };
+
   // Keyboard navigation support
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -99,11 +105,12 @@ export default function Home() {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
-                onClick={toggleMobileMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                onClick={isMobileMenuOpen ? closeMobileMenu : toggleMobileMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 touch-manipulation"
                 aria-expanded={isMobileMenuOpen}
+                aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
               >
-                <span className="sr-only">메뉴 열기</span>
+                <span className="sr-only">{isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}</span>
                 {!isMobileMenuOpen ? (
                   <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
