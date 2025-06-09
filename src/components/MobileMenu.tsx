@@ -2,7 +2,7 @@
 
 import { MutableRefObject } from 'react';
 import Link from 'next/link';
-import { NAVIGATION_ITEMS, EXTERNAL_LINKS, GitHubIcon } from '../constants/navigation';
+import { NAVIGATION_ITEMS, EXTERNAL_LINKS, GitHubIcon } from '@/constants/navigation';
 
 interface MobileMenuProps {
   isOpen: boolean;

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import NavigationHeader from '../components/NavigationHeader';
 import MobileMenu from '../components/MobileMenu';
-import { useNavigationMenu } from '../hooks/useNavigationMenu';
+import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 export default function Home() {
   const { mobileMenu, helpers } = useNavigationMenu();

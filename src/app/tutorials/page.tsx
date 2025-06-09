@@ -1,8 +1,8 @@
 'use client';
 
-import NavigationHeader from '../components/NavigationHeader';
-import MobileMenu from '../components/MobileMenu';
-import { useNavigationMenu } from '../hooks/useNavigationMenu';
+import NavigationHeader from '@/components/NavigationHeader';
+import MobileMenu from '@/components/MobileMenu';
+import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 export default function Tutorials() {
   const { mobileMenu, helpers } = useNavigationMenu();

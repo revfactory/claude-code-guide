@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import NavigationHeader from '../components/NavigationHeader';
-import MobileMenu from '../components/MobileMenu';
-import { useNavigationMenu } from '../hooks/useNavigationMenu';
+import NavigationHeader from '@/components/NavigationHeader';
+import MobileMenu from '@/components/MobileMenu';
+import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 function CopyButton({ text, className = "" }: { text: string; className?: string }) {
   const [copied, setCopied] = useState(false);
