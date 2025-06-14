@@ -8,7 +8,7 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint"
   },
   "dependencies": {
     "react": "^19.0.0",
