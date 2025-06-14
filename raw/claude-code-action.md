@@ -340,7 +340,7 @@ Use a specific Claude model:
 ```yaml
 - uses: anthropics/claude-code-action@beta
   with:
-    # model: "claude-3-5-sonnet-20241022"  # Optional: specify a different model
+    # model: "claude-opus-4-20250514"  # Optional: specify a different model
     # ... other inputs
 ```
 
@@ -374,14 +374,14 @@ Use provider-specific model names based on your chosen provider:
 # For Amazon Bedrock with OIDC
 - uses: anthropics/claude-code-action@beta
   with:
-    model: "anthropic.claude-3-7-sonnet-20250219-beta:0" # Cross-region inference
+    model: "anthropic.claude-opus-4-20250514-beta:0" # Cross-region inference
     use_bedrock: "true"
     # ... other inputs
 
 # For Google Vertex AI with OIDC
 - uses: anthropics/claude-code-action@beta
   with:
-    model: "claude-3-7-sonnet@20250219"
+    model: "claude-opus-4@20250514"
     use_vertex: "true"
     # ... other inputs
 ```
@@ -407,7 +407,7 @@ Both AWS Bedrock and GCP Vertex AI require OIDC authentication.
 
 - uses: anthropics/claude-code-action@beta
   with:
-    model: "anthropic.claude-3-7-sonnet-20250219-beta:0"
+    model: "anthropic.claude-opus-4-20250514-beta:0"
     use_bedrock: "true"
     # ... other inputs
 
@@ -432,7 +432,7 @@ Both AWS Bedrock and GCP Vertex AI require OIDC authentication.
 
 - uses: anthropics/claude-code-action@beta
   with:
-    model: "claude-3-7-sonnet@20250219"
+    model: "claude-opus-4@20250514"
     use_vertex: "true"
     # ... other inputs
 

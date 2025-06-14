@@ -79,6 +79,15 @@ export default function Home() {
                 <p className="text-slate-600 dark:text-slate-300">자연어로 코드 편집 요청하고, AI가 전체 코드베이스를 이해하여 정확한 수정을 수행합니다.</p>
               </div>
               <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">MCP 프로토콜</h3>
+                <p className="text-slate-600 dark:text-slate-300">Model Context Protocol을 통해 GitHub, Slack, 데이터베이스 등 외부 도구와 안전하게 연결됩니다.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -87,6 +96,10 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">Git 자동화</h3>
                 <p className="text-slate-600 dark:text-slate-300">커밋 생성, PR 작성, 머지 충돌 해결 등 Git 작업을 자연어 명령으로 자동화할 수 있습니다.</p>
               </div>
+            </div>
+            
+            {/* Additional MCP Features */}
+            <div className="mt-12 grid md:grid-cols-2 gap-8">
               <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,6 +108,15 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">테스트 & 디버깅</h3>
                 <p className="text-slate-600 dark:text-slate-300">테스트 실행, 실패한 테스트 분석 및 수정, 보안 취약점 발견 등을 자동으로 처리합니다.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">워크플로우 통합</h3>
+                <p className="text-slate-600 dark:text-slate-300">GitHub Actions, Docker, CI/CD 파이프라인과 통합하여 전체 개발 과정을 자동화합니다.</p>
               </div>
             </div>
           </div>
@@ -148,7 +170,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
                 <li><Link href="/getting-started" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">설치 및 시작하기</Link></li>
                 <li><Link href="/usage-guide/basic-commands" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기본 명령어</Link></li>
-                <li><Link href="/usage-guide/advanced-features" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">고급 기능</Link></li>
+                <li><Link href="/mcp" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">MCP 프로토콜</Link></li>
                 <li><Link href="/tutorials" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">실전 튜토리얼</Link></li>
               </ul>
             </div>
