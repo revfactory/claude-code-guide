@@ -9,8 +9,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
-
   },
   "dependencies": {
     "react": "^19.0.0",
