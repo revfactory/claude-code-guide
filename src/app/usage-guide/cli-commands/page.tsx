@@ -160,10 +160,10 @@ export default function CLICommands() {
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-slate-400 text-xs">Claude Code</span>
-                          <CopyButton text="/model claude-3-5-sonnet-20241022" className="scale-75" />
+                          <CopyButton text="/model claude-opus-4-20250514" className="scale-75" />
                         </div>
                         <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
-                        <code className="text-white font-mono text-sm">/model claude-3-5-sonnet-20241022</code>
+                        <code className="text-white font-mono text-sm">/model claude-opus-4-20250514</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         사용할 Claude 모델을 변경합니다.
@@ -229,9 +229,9 @@ export default function CLICommands() {
                       <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-slate-400 text-xs">터미널</span>
-                          <CopyButton text='claude --model claude-3-5-sonnet-20241022 \"디버깅을 도와줘\"' className="scale-75" />
+                          <CopyButton text='claude --model claude-opus-4-20250514 \"디버깅을 도와줘\"' className="scale-75" />
                         </div>
-                        <code className="text-green-400 font-mono text-sm">claude --model claude-3-5-sonnet-20241022 "디버깅을 도와줘"</code>
+                        <code className="text-green-400 font-mono text-sm">claude --model claude-opus-4-20250514 "디버깅을 도와줘"</code>
                       </div>
                       <p className="text-slate-600 dark:text-slate-300 text-sm">
                         특정 Claude 모델을 지정하여 실행합니다.
@@ -377,9 +377,9 @@ export default function CLICommands() {
                     <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-2">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-slate-400 text-xs">터미널</span>
-                        <CopyButton text="export ANTHROPIC_MODEL=claude-3-5-sonnet-20241022" className="scale-75" />
+                        <CopyButton text="export ANTHROPIC_MODEL=claude-opus-4-20250514" className="scale-75" />
                       </div>
-                      <code className="text-green-400 font-mono text-sm">export ANTHROPIC_MODEL=claude-3-5-sonnet-20241022</code>
+                      <code className="text-green-400 font-mono text-sm">export ANTHROPIC_MODEL=claude-opus-4-20250514</code>
                     </div>
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-3">
                       기본으로 사용할 Claude 모델을 설정합니다.
@@ -387,9 +387,9 @@ export default function CLICommands() {
                     <div className="text-sm text-slate-600 dark:text-slate-300">
                       <p className="font-medium mb-1">사용 가능한 모델:</p>
                       <ul className="space-y-1 ml-4">
-                        <li>• claude-3-5-sonnet-20241022 (권장)</li>
-                        <li>• claude-3-5-haiku-20241022</li>
-                        <li>• claude-3-opus-20240229</li>
+                        <li>• claude-opus-4-20250514 (권장)</li>
+                        <li>• claude-sonnet-4-20250109</li>
+                        <li>• claude-3-5-sonnet-20241022</li>
                       </ul>
                     </div>
                   </div>
