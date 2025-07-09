@@ -100,6 +100,82 @@ export default function Home() {
           </div>
         </section>
 
+        {/* AI Native Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/10 dark:to-blue-900/10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                  AI Native 개발 환경으로의 전환
+                </h2>
+                <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">
+                  AI를 단순한 도구가 아닌 협업 파트너로 활용하는 새로운 개발 패러다임을 만나보세요. 
+                  생산성을 극대화하고 더 창의적인 문제 해결에 집중할 수 있습니다.
+                </p>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-slate-700 dark:text-slate-300">AI와 함께 코드 작성 속도 2-10배 향상</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-slate-700 dark:text-slate-300">반복적인 작업 자동화로 창의적 문제 해결에 집중</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-slate-700 dark:text-slate-300">최신 AI 도구와 워크플로우 통합 가이드</p>
+                  </div>
+                </div>
+                <Link href="/ai-native" className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all">
+                  <span>AI Native 가이드 보기</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-lg blur-2xl opacity-30"></div>
+                  <div className="relative bg-white dark:bg-slate-800 p-8 rounded-lg shadow-xl">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-slate-900 dark:text-white">AI Powered</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400">Claude, Copilot, Cursor</p>
+                        </div>
+                      </div>
+                      <div className="border-t border-slate-200 dark:border-slate-700 pt-4">
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">프롬프트 예시:</p>
+                        <code className="block bg-slate-100 dark:bg-slate-900 p-3 rounded text-sm">
+                          "이 함수를 TypeScript로 변환하고<br/>
+                          테스트 코드도 함께 작성해줘"
+                        </code>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Install Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
