@@ -181,8 +181,57 @@ export default function GettingStarted() {
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">1. Node.js 설치 확인</h3>
-                <p className="text-slate-600 dark:text-slate-300 mb-3">먼저 Node.js가 설치되어 있는지 확인합니다:</p>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">1. 터미널 열기</h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-3">운영체제에 따라 터미널을 여는 방법이 다릅니다:</p>
+                <div className="space-y-3 mb-4">
+                  <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4">
+                    <div className="flex items-start">
+                      <svg className="w-5 h-5 text-slate-600 dark:text-slate-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.205 16.392c-2.469 3.289-7.741 2.179-11.122 2.338 0 0-.599.034-1.201.133 0 0 .228-.097.519-.198 2.374-.821 3.496-.986 4.939-1.727 2.71-1.388 5.408-4.413 5.957-7.555-1.032 3.022-4.17 5.623-7.027 6.679-1.955.722-5.492 1.424-5.493 1.424a5.28 5.28 0 0 1-.143-.076c-2.405-1.17-2.475-6.38 1.894-8.059 1.916-.736 3.747-.332 5.818-.825 2.208-.525 4.766-2.18 5.805-4.344 1.165 3.458 2.565 8.866.054 12.21zm.042-13.28a9.212 9.212 0 0 1-1.065 1.89 9.982 9.982 0 0 0-7.167-3.031C6.492 1.971 2 6.463 2 11.985a9.983 9.983 0 0 0 3.205 7.334l.22.194c.556.494 1.17.92 1.815 1.285.129.073.259.141.388.208a9.86 9.86 0 0 0 .551.214c.141.053.283.104.428.152.352.12.71.223 1.073.309.083.02.166.04.25.058.402.083.81.145 1.221.184.035.004.072.006.107.009a10.002 10.002 0 0 0 1.485.014c5.522 0 10.014-4.493 10.014-10.016a9.98 9.98 0 0 0-1.757-5.63l-.003-.005z"/>
+                      </svg>
+                      <div className="flex-1">
+                        <h4 className="font-medium text-slate-900 dark:text-white mb-1">macOS</h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-300">
+                          <kbd className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 rounded">Cmd + Space</kbd>를 누르고 "터미널" 또는 "Terminal"을 입력하거나,
+                          <br />응용 프로그램 → 유틸리티 → 터미널을 실행하세요.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4">
+                    <div className="flex items-start">
+                      <svg className="w-5 h-5 text-slate-600 dark:text-slate-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.231 5.74l-9.48-.007L5.74 2.732l-.01 9.478m16.012-6.461v16.012l-10.495 2.25L.755 21.761V5.749L11.25 3.5l10.231 2.24M11.251 12v9.767l10.508-2.255V3.992l-10.508 2.259v5.749M4.005 7.503l3.759 1.496v1.252l-3.759-1.495v1.495l2.256.751v1.001l-2.256-.75v1.254l3.759 1.496v2.254c-1.252-.25-.749 0-3.759-1.249V7.503"/>
+                      </svg>
+                      <div className="flex-1">
+                        <h4 className="font-medium text-slate-900 dark:text-white mb-1">Windows (WSL)</h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-300">
+                          <kbd className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 rounded">Win</kbd> 키를 누르고 "wsl" 또는 "Ubuntu"를 입력하거나,
+                          <br />PowerShell을 열고 <code className="px-1 bg-slate-200 dark:bg-slate-700 rounded">wsl</code> 명령어를 실행하세요.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4">
+                    <div className="flex items-start">
+                      <svg className="w-5 h-5 text-slate-600 dark:text-slate-400 mt-0.5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm0-13.086c1.886 0 3.444-.385 4.659-1.09-.027-.127-.039-.26-.067-.387C16.262 6.766 14.577 6 12 6S7.738 6.766 7.408 7.938c-.026.127-.041.26-.067.387 1.215.705 2.773 1.089 4.659 1.089zm0 5.586c2.538 0 4.621-.805 5.85-2.031-.068-.34-.148-.673-.24-1.001C16.411 13.265 14.421 14 12 14s-4.411-.735-5.61-2.032c-.092.328-.172.661-.24 1.001C7.379 14.195 9.462 15 12 15z"/>
+                      </svg>
+                      <div className="flex-1">
+                        <h4 className="font-medium text-slate-900 dark:text-white mb-1">Linux</h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-300">
+                          <kbd className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 rounded">Ctrl + Alt + T</kbd>를 누르거나,
+                          <br />응용 프로그램 메뉴에서 "Terminal" 또는 "터미널"을 찾아 실행하세요.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">2. Node.js 설치 확인</h3>
+                <p className="text-slate-600 dark:text-slate-300 mb-3">터미널에서 Node.js가 설치되어 있는지 확인합니다:</p>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
@@ -196,7 +245,7 @@ export default function GettingStarted() {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">2. Claude Code 설치</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">3. Claude Code 설치</h3>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
@@ -221,7 +270,7 @@ export default function GettingStarted() {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">3. 설치 확인</h3>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">4. 설치 확인</h3>
                 <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-slate-400 text-sm">터미널</span>
