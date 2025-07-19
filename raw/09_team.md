@@ -269,7 +269,7 @@ key](https://docs.litellm.ai/docs/proxy/virtual_keys#tracking-spend). This
 project is unaffiliated with Anthropic and we have not audited its security.
 
 For team usage, Claude Code charges by API token consumption. On average,
-Claude Code costs ~$50-60/developer per month with Sonnet 3.7 though there is
+Claude Code costs ~$50-60/developer per month with Sonnet 4 though there is
 large variance depending on how many instances users are running and whether
 they’re using it in automation.
 

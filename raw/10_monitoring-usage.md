@@ -437,7 +437,7 @@ Claude Code exports the following events via OpenTelemetry logs/events (when
     * All standard attributes
     * `event.name`: `"api_request"`
     * `event.timestamp`: ISO 8601 timestamp
-    * `model`: Model used (e.g., “claude-3-5-sonnet-20241022”)
+    * `model`: Model used (e.g., “claude-opus-4-20250514”)
     * `cost_usd`: Estimated cost in USD
     * `duration_ms`: Request duration in milliseconds
     * `input_tokens`: Number of input tokens
@@ -457,7 +457,7 @@ Claude Code exports the following events via OpenTelemetry logs/events (when
     * All standard attributes
     * `event.name`: `"api_error"`
     * `event.timestamp`: ISO 8601 timestamp
-    * `model`: Model used (e.g., “claude-3-5-sonnet-20241022”)
+    * `model`: Model used (e.g., “claude-opus-4-20250514”)
     * `error`: Error message
     * `status_code`: HTTP status code (if applicable)
     * `duration_ms`: Request duration in milliseconds

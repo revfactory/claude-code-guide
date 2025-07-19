@@ -110,7 +110,7 @@ export default function Tutorials() {
 
               <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                 <p className="text-green-800 dark:text-green-200 text-sm">
-                  <strong>⚡ 팁:</strong> 넓은 질문부터 시작해서 점차 구체적인 영역으로 좁혀가세요.
+                  <strong>⚡ 팁:</strong> 넓은 질문부터 시작해서 점차 구체적인 영역으로 좁혀가세요. Claude Opus 4의 향상된 컨텍스트 이해 능력으로 더 정확한 분석이 가능합니다.
                 </p>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function Tutorials() {
               </div>
               
               <p className="text-slate-600 dark:text-slate-300 mb-6">
-                복잡한 아키텍처 결정이나 어려운 버그 해결을 위해 Claude의 깊은 사고를 유도하는 방법
+                복잡한 아키텍처 결정이나 어려운 버그 해결을 위해 Claude Opus 4의 깊은 사고를 유도하는 방법
               </p>
 
               <div className="space-y-4">
@@ -297,6 +297,7 @@ export default function Tutorials() {
                 <ul className="text-purple-700 dark:text-purple-300 text-sm space-y-1">
                   <li>• 먼저 컨텍스트를 충분히 제공</li>
                   <li>• "think", "think hard", "think deeply" 등의 표현 활용</li>
+                  <li>• Claude Opus 4의 강화된 추론 능력을 활용한 복잡한 문제 해결</li>
                   <li>• 사고 과정을 확인한 후 실행 단계로 진행</li>
                 </ul>
               </div>
@@ -347,6 +348,136 @@ export default function Tutorials() {
                   <li>• 프로젝트별 아키텍처 패턴</li>
                   <li>• 팀 내 공유 규칙과 개인 설정</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* MCP Tutorials */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">MCP 프로토콜 튜토리얼</h2>
+          <div className="grid lg:grid-cols-2 gap-8">
+            
+            {/* Supabase MCP Tutorial */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Supabase MCP 완전 정복</h3>
+              </div>
+              
+              <p className="text-slate-600 dark:text-slate-300 mb-6">
+                가장 인기 있는 MCP 서버인 Supabase를 Claude Code에 연결하여 백엔드 개발을 완전 자동화해보세요.
+              </p>
+
+              <div className="space-y-4">
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
+                  <h4 className="font-medium text-green-900 dark:text-green-300 mb-2">1. 빠른 설정</h4>
+                  <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-2">
+                    <code className="text-green-400 font-mono text-sm">claude mcp add supabase -e SUPABASE_ACCESS_TOKEN=your_token npx -y @supabase/mcp-server-supabase@latest</code>
+                  </div>
+                  <p className="text-green-800 dark:text-green-200 text-xs">
+                    Supabase 개인 액세스 토큰으로 MCP 서버 연결 (설정 → 액세스 토큰에서 생성)
+                  </p>
+                </div>
+                
+                <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4">
+                  <h4 className="font-medium text-slate-900 dark:text-white mb-3">2. 실전 사용 예시</h4>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-1">
+                        <code className="text-blue-400 font-mono text-xs">claude{`>`} </code>
+                        <code className="text-white font-mono text-xs">블로그 포스트를 저장할 테이블을 만들어줘</code>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs">→ 스키마 설계 → 테이블 생성 → RLS 정책 설정</p>
+                    </div>
+                    <div>
+                      <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 mb-1">
+                        <code className="text-blue-400 font-mono text-xs">claude{`>`} </code>
+                        <code className="text-white font-mono text-xs">사용자 인증 Edge Function을 만들고 배포해줘</code>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs">→ 함수 작성 → 테스트 → 실시간 배포</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                <p className="text-green-800 dark:text-green-200 text-sm">
+                  <strong>🚀 프로 팁:</strong> "데이터베이스 비용을 분석해줘", "느린 쿼리를 최적화해줘" 같은 고급 명령도 사용 가능합니다!
+                </p>
+              </div>
+            </div>
+
+            {/* Real Workflow Tutorial */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">완전 자동화 워크플로우</h3>
+              </div>
+              
+              <p className="text-slate-600 dark:text-slate-300 mb-6">
+                GitHub + Supabase + Slack을 연결하여 "이슈 접수 → 코드 수정 → 배포 → 팀 알림"까지 한 번에!
+              </p>
+
+              <div className="space-y-6">
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-gradient-to-br from-gray-50 to-slate-50 dark:from-gray-900/20 dark:to-slate-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-800">
+                    <div className="flex items-center mb-2">
+                      <span className="w-6 h-6 bg-gray-800 text-white rounded-full flex items-center justify-center text-xs font-bold mr-2">1</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-300">GitHub 연결</span>
+                    </div>
+                    <div className="bg-slate-900 rounded p-2 mb-2">
+                      <code className="text-green-400 font-mono text-xs">claude mcp add github ...</code>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
+                    <div className="flex items-center mb-2">
+                      <span className="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-bold mr-2">2</span>
+                      <span className="font-medium text-green-900 dark:text-green-300">Supabase 연결</span>
+                    </div>
+                    <div className="bg-slate-900 rounded p-2 mb-2">
+                      <code className="text-green-400 font-mono text-xs">claude mcp add supabase ...</code>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <div className="flex items-center mb-2">
+                      <span className="w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold mr-2">3</span>
+                      <span className="font-medium text-purple-900 dark:text-purple-300">Slack 연결</span>
+                    </div>
+                    <div className="bg-slate-900 rounded p-2 mb-2">
+                      <code className="text-green-400 font-mono text-xs">claude mcp add slack ...</code>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-3">🎯 마법의 한 줄 명령어</h4>
+                  <div className="bg-slate-900 dark:bg-slate-800 rounded p-3 mb-3">
+                    <code className="text-blue-400 font-mono text-sm">claude{`>`} </code>
+                    <code className="text-white font-mono text-sm">GitHub 이슈 #42를 분석해서 수정하고, 배포 후 Slack #dev에 알려줘</code>
+                  </div>
+                  <div className="text-blue-800 dark:text-blue-200 text-sm space-y-1">
+                    <p>→ 이슈 내용 분석 및 관련 코드 파일 찾기</p>
+                    <p>→ 버그 수정 코드 작성 및 테스트</p>
+                    <p>→ GitHub에 PR 생성 및 머지</p>
+                    <p>→ Supabase에 Edge Function 배포</p>
+                    <p>→ Slack 채널에 완료 알림 전송</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg">
+                <p className="text-purple-800 dark:text-purple-200 text-sm">
+                  <strong>⚡ 실제 사례:</strong> 스타트업에서 이 워크플로우로 버그 수정 시간을 3시간에서 15분으로 단축했습니다!
+                </p>
               </div>
             </div>
           </div>
@@ -492,16 +623,16 @@ export default function Tutorials() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">MCP 서버 연결</h3>
+              <a href="/mcp" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors mb-3 block">MCP 서버 연결</a>
               <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
                 Model Context Protocol을 통해 외부 도구와 데이터 소스에 연결
               </p>
               <div className="space-y-2">
                 <div className="text-xs text-slate-500 dark:text-slate-400">
-                  <code>claude mcp add postgres-server</code>
+                  <code>GitHub 레포지토리 분석해줘</code>
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400">
-                  데이터베이스 쿼리 및 스키마 검사
+                  <code>Slack에 배포 알림을 보내줘</code>
                 </div>
               </div>
             </div>
