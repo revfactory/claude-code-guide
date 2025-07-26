@@ -8,9 +8,9 @@ export interface NavigationItem {
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '/', label: '홈' },
   { href: '/getting-started', label: '시작하기' },
+  { href: '/tutorials', label: '튜토리얼' },
   { href: '/usage-guide', label: '사용법 가이드' },
   { href: '/mcp', label: 'MCP 프로토콜' },
-  { href: '/tutorials', label: '튜토리얼' },
   { href: '/ai-native', label: 'AI Native' },
   { href: '/community', label: '커뮤니티' },
   { href: '/use-cases', label: '활용 사례' },
