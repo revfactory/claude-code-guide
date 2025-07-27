@@ -395,27 +395,6 @@ export default function Enterprise() {
             </div>
           </div>
         </section>
-
-        {/* Contact Section */}
-        <section>
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-800 p-8 text-center">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-              엔터프라이즈 도입 문의
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
-              귀사의 요구사항에 맞는 맞춤형 솔루션을 제공합니다. 
-              전문가와 상담하여 최적의 도입 전략을 수립하세요.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:enterprise@anthropic.com" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                문의하기
-              </a>
-              <a href="https://anthropic.com/enterprise-demo" className="border border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
-                데모 예약
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );

@@ -121,7 +121,7 @@ export default function GettingStarted() {
                     <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Windows (WSL 환경)
+                    Windows 10+ (네이티브 지원)
                   </li>
                 </ul>
               </div>
@@ -163,9 +163,10 @@ export default function GettingStarted() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 15.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
                 <div>
-                  <p className="text-amber-800 dark:text-amber-200 font-medium">Windows 사용자 주의사항</p>
+                  <p className="text-amber-800 dark:text-amber-200 font-medium">Windows 사용자 안내</p>
                   <p className="text-amber-700 dark:text-amber-300 text-sm mt-1">
-                    Claude Code는 Windows에서 직접 실행되지 않습니다. WSL(Windows Subsystem for Linux) 환경에서 실행해주세요.
+                    <strong>네이티브 지원:</strong> Git for Windows 설치 시 Git Bash에서 직접 실행 가능합니다.<br/>
+                    <strong>WSL 옵션:</strong> WSL 1 또는 WSL 2에서도 사용 가능합니다.
                   </p>
                 </div>
               </div>
@@ -185,6 +186,46 @@ export default function GettingStarted() {
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">1. 터미널 열기</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-3">운영체제에 따라 터미널을 여는 방법이 다릅니다:</p>
+                
+                {/* Ghostty 추천 */}
+                <div className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mr-3">
+                      <svg width="27" height="32" viewBox="0 0 27 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-7">
+                        <path d="M20.3955 32C19.1436 32 17.9152 31.6249 16.879 30.9333C15.8428 31.6249 14.6121 32 13.3625 32C12.113 32 10.8822 31.6249 9.84606 30.9333C8.8169 31.6249 7.62598 31.9906 6.37177 32H6.33426C4.63228 32 3.0358 31.3225 1.83316 30.0941C0.64928 28.8844 -0.00244141 27.2926 -0.00244141 25.6117V13.3626C-9.70841e-05 5.99443 5.99433 0 13.3625 0C20.7307 0 26.7252 5.99443 26.7252 13.3626V25.6164C26.7252 29.0086 24.0995 31.8078 20.7472 31.9906C20.6299 31.9977 20.5127 32 20.3955 32Z" fill="#3551F3"/>
+                        <path d="M20.3955 30.5934C19.2773 30.5934 18.1848 30.209 17.3151 29.5104C17.165 29.3884 17.0033 29.365 16.8954 29.365C16.7243 29.365 16.5508 29.426 16.4078 29.5408C15.5451 30.2207 14.4644 30.5958 13.3625 30.5958C12.2607 30.5958 11.18 30.2207 10.3173 29.5408C10.1789 29.4306 10.0148 29.3744 9.84605 29.3744C9.67726 29.3744 9.51316 29.433 9.37485 29.5408C8.50979 30.223 7.46891 30.5864 6.36474 30.5958H6.33192C5.01675 30.5958 3.7766 30.0706 2.84122 29.1142C1.91756 28.1694 1.40649 26.9269 1.40649 25.6164V13.3673C1.40649 6.77043 6.7703 1.40662 13.3625 1.40662C19.9548 1.40662 25.3186 6.77043 25.3186 13.3627V25.6164C25.3186 28.2608 23.2767 30.4434 20.6698 30.5864C20.5784 30.5911 20.4869 30.5934 20.3955 30.5934Z" fill="black"/>
+                        <path d="M23.9119 13.3627V25.6165C23.9119 27.4919 22.4654 29.079 20.5923 29.1822C19.6827 29.2314 18.8435 28.936 18.1941 28.4132C17.4158 27.7873 16.321 27.8154 15.5356 28.4343C14.9378 28.9055 14.183 29.1869 13.3601 29.1869C12.5372 29.1869 11.7847 28.9055 11.1869 28.4343C10.3922 27.8084 9.29738 27.8084 8.50266 28.4343C7.90954 28.9009 7.16405 29.1822 6.35291 29.1869C4.40478 29.2009 2.81299 27.5599 2.81299 25.6118V13.3627C2.81299 7.53704 7.5368 2.81323 13.3624 2.81323C19.1881 2.81323 23.9119 7.53704 23.9119 13.3627Z" fill="white"/>
+                        <path d="M11.2808 12.4366L7.3494 10.1673C6.83833 9.87192 6.18192 10.0477 5.88654 10.5588C5.59115 11.0699 5.76698 11.7263 6.27804 12.0217L8.60361 13.365L6.27804 14.7083C5.76698 15.0036 5.59115 15.6577 5.88654 16.1711C6.18192 16.6822 6.83599 16.858 7.3494 16.5626L11.2808 14.2933C11.9935 13.8807 11.9935 12.8516 11.2808 12.4389V12.4366Z" fill="black"/>
+                        <path d="M20.1822 12.2913H15.0176C14.4269 12.2913 13.9463 12.7695 13.9463 13.3626C13.9463 13.9557 14.4245 14.434 15.0176 14.434H20.1822C20.773 14.434 21.2535 13.9557 21.2535 13.3626C21.2535 12.7695 20.7753 12.2913 20.1822 12.2913Z" fill="black"/>
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-1">💡 추천 터미널: Ghostty</h4>
+                      <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">
+                        GPU 가속 렌더링으로 초고속 성능을 자랑하는 네이티브 터미널입니다.
+                        Claude Code와 함께 사용하면 더욱 빠르고 부드러운 개발 경험을 제공합니다.
+                      </p>
+                      <div className="flex flex-wrap items-center gap-4 text-xs">
+                        <span className="flex items-center text-blue-700 dark:text-blue-300">
+                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          10배 빠른 렌더링
+                        </span>
+                        <span className="flex items-center text-blue-700 dark:text-blue-300">
+                          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          macOS, Linux 지원
+                        </span>
+                        <a href="https://ghostty.org/download" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
+                          다운로드 →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <div className="space-y-3 mb-4">
                   <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4">
                     <div className="flex items-start">
@@ -206,10 +247,10 @@ export default function GettingStarted() {
                         <path d="M21.231 5.74l-9.48-.007L5.74 2.732l-.01 9.478m16.012-6.461v16.012l-10.495 2.25L.755 21.761V5.749L11.25 3.5l10.231 2.24M11.251 12v9.767l10.508-2.255V3.992l-10.508 2.259v5.749M4.005 7.503l3.759 1.496v1.252l-3.759-1.495v1.495l2.256.751v1.001l-2.256-.75v1.254l3.759 1.496v2.254c-1.252-.25-.749 0-3.759-1.249V7.503"/>
                       </svg>
                       <div className="flex-1">
-                        <h4 className="font-medium text-slate-900 dark:text-white mb-1">Windows (WSL)</h4>
+                        <h4 className="font-medium text-slate-900 dark:text-white mb-1">Windows</h4>
                         <p className="text-sm text-slate-600 dark:text-slate-300">
-                          <kbd className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 rounded">Win</kbd> 키를 누르고 "wsl" 또는 "Ubuntu"를 입력하거나,
-                          <br />PowerShell을 열고 <code className="px-1 bg-slate-200 dark:bg-slate-700 rounded">wsl</code> 명령어를 실행하세요.
+                          <strong>네이티브 지원:</strong> Git Bash (<a href="https://git-scm.com/downloads/win" className="text-blue-600 dark:text-blue-400 hover:underline">Git for Windows</a> 필요)
+                          <br /><strong>WSL 옵션:</strong> <kbd className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 rounded">Win</kbd> 키를 누르고 "wsl"을 입력
                         </p>
                       </div>
                     </div>
@@ -281,6 +322,16 @@ export default function GettingStarted() {
                         <CopyButton text="curl -fsSL https://claude.ai/install.sh | sh" />
                       </div>
                       <code className="text-green-400 font-mono">curl -fsSL https://claude.ai/install.sh | sh</code>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                    <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Windows Git Bash 추가 설정</h4>
+                    <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">
+                      Portable Git 설치 시 bash 경로를 지정해야 할 수 있습니다:
+                    </p>
+                    <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-3">
+                      <code className="text-green-400 font-mono text-sm">$env:CLAUDE_CODE_GIT_BASH_PATH="C:\Program Files\Git\bin\bash.exe"</code>
                     </div>
                   </div>
                 </div>

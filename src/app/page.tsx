@@ -65,11 +65,16 @@ export default function Home() {
         {/* Basic Features Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">
-              기본 기능
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                기본 기능
+              </h2>
+              <Link href="/guides/basic-commands" className="text-blue-600 dark:text-blue-400 hover:underline">
+                기본 명령어 가이드 보기 →
+              </Link>
+            </div>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+              <Link href="/guides/basic-commands" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
@@ -77,8 +82,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">자연어 대화</h3>
                 <p className="text-slate-600 dark:text-slate-300">일상적인 언어로 코드 작성, 수정, 리팩토링을 요청하고 즉시 실행할 수 있습니다.</p>
-              </div>
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+              </Link>
+              <Link href="/guides/core-workflows" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -86,8 +91,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">자동 코드 분석</h3>
                 <p className="text-slate-600 dark:text-slate-300">프로젝트 구조를 이해하고 컨텍스트를 파악하여 정확한 코드 수정을 수행합니다.</p>
-              </div>
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow">
+              </Link>
+              <Link href="/tutorials" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -95,7 +100,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">버전 관리 통합</h3>
                 <p className="text-slate-600 dark:text-slate-300">Git과 완벽하게 통합되어 커밋, PR 생성, 브랜치 관리를 자동으로 처리합니다.</p>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -103,11 +108,16 @@ export default function Home() {
         {/* Advanced Features Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12">
-              고급 기능
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                고급 기능
+              </h2>
+              <Link href="/guides/advanced-features" className="text-blue-600 dark:text-blue-400 hover:underline">
+                고급 기능 가이드 보기 →
+              </Link>
+            </div>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800">
+              <Link href="/guides/advanced-features#subagents" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -115,8 +125,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">강력한 서브 에이전트</h3>
                 <p className="text-slate-600 dark:text-slate-300">복잡한 작업을 위한 전문 서브 에이전트가 자동으로 활성화되어 정밀한 코드 분석과 수정을 수행합니다.</p>
-              </div>
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800">
+              </Link>
+              <Link href="/guides/advanced-features#hooks-mcp" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -124,8 +134,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">훅 시스템 & MCP</h3>
                 <p className="text-slate-600 dark:text-slate-300">워크플로우 커스터마이징을 위한 훅 시스템과 Model Context Protocol로 도구를 확장할 수 있습니다.</p>
-              </div>
-              <div className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800">
+              </Link>
+              <Link href="/guides/advanced-features#slash-commands" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -133,7 +143,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">슬래시 명령어</h3>
                 <p className="text-slate-600 dark:text-slate-300">/init, /explain, /refactor 등 강력한 슬래시 명령어로 빠르게 작업을 수행할 수 있습니다.</p>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -141,14 +151,19 @@ export default function Home() {
         {/* Enterprise Features Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-4">
-              엔터프라이즈급 기능
-            </h2>
-            <p className="text-center text-slate-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto">
-              대규모 팀과 기업을 위한 보안, 규정 준수, 통합 기능을 제공합니다.
-            </p>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                엔터프라이즈급 기능
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300 mb-4 max-w-3xl mx-auto">
+                대규모 팀과 기업을 위한 보안, 규정 준수, 통합 기능을 제공합니다.
+              </p>
+              <Link href="/developers/enterprise" className="text-blue-600 dark:text-blue-400 hover:underline">
+                엔터프라이즈 가이드 보기 →
+              </Link>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+              <Link href="/developers/enterprise#iam" className="block p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -156,8 +171,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">IAM 통합</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">기업 SSO 및 인증 시스템과 완벽하게 통합</p>
-              </div>
-              <div className="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+              </Link>
+              <Link href="/developers/enterprise#cloud" className="block p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -165,8 +180,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">클라우드 통합</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">AWS Bedrock, Google Vertex AI 지원</p>
-              </div>
-              <div className="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+              </Link>
+              <Link href="/developers/enterprise#security" className="block p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -174,8 +189,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">보안 감사</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">모든 활동 로깅 및 접근 제어</p>
-              </div>
-              <div className="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+              </Link>
+              <Link href="/developers/enterprise#compliance" className="block p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-10 h-10 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -183,7 +198,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">규정 준수</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300">SOC2, HIPAA, GDPR 인증 지원</p>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -358,6 +373,11 @@ export default function Home() {
             <p className="text-slate-600 dark:text-slate-300 mt-4">
               설치 후 <code className="bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-sm">claude</code> 명령어로 바로 시작할 수 있습니다.
             </p>
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                <strong>🎉 Windows 네이티브 지원!</strong> 이제 WSL 없이도 Git Bash를 통해 Windows에서 직접 사용할 수 있습니다.
+              </p>
+            </div>
           </div>
         </section>
       </main>
