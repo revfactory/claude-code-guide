@@ -2,6 +2,7 @@
 
 import NavigationHeader from '@/components/NavigationHeader';
 import MobileMenu from '@/components/MobileMenu';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 export default function Tutorials() {
@@ -23,6 +24,7 @@ export default function Tutorials() {
       </NavigationHeader>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Breadcrumb items={[{ label: '튜토리얼' }]} />
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -542,7 +544,7 @@ export default function Tutorials() {
             <a href="/getting-started" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all">
               Claude Code 설치하기
             </a>
-            <a href="/usage-guide" className="border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            <a href="/guides/basic-commands" className="border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
               기본 사용법 학습
             </a>
           </div>

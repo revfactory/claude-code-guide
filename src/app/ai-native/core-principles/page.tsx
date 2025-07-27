@@ -2,7 +2,7 @@
 
 import NavigationHeader from '@/components/NavigationHeader';
 import MobileMenu from '@/components/MobileMenu';
-import AINativeNavigation from '@/components/AINativeNavigation';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 export default function AINativeCorePrinciplesPage() {
@@ -25,8 +25,8 @@ export default function AINativeCorePrinciplesPage() {
 
       <main className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* 상단 네비게이션 */}
-          <AINativeNavigation />
+          <Breadcrumb items={[{ label: 'AI Native', href: '/ai-native' }, { label: '핵심 원칙' }]} />
+          
 
           {/* 헤더 섹션 */}
           <section className="mb-12">

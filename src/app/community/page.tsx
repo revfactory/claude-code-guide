@@ -2,6 +2,7 @@
 
 import NavigationHeader from '@/components/NavigationHeader';
 import MobileMenu from '@/components/MobileMenu';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 export default function Community() {
@@ -23,6 +24,8 @@ export default function Community() {
       </NavigationHeader>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Breadcrumb items={[{ label: '커뮤니티' }]} />
+        
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">

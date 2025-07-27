@@ -1,18 +1,66 @@
 export interface NavigationItem {
-  href: string;
+  href?: string;
   label: string;
   external?: boolean;
   icon?: React.ComponentType<{ className?: string }>;
+  items?: NavigationItem[];
 }
 
+export const MAIN_NAVIGATION: NavigationItem[] = [
+  {
+    label: '시작하기',
+    items: [
+      { href: '/getting-started', label: '빠른 시작' },
+      { href: '/tutorials', label: '튜토리얼' },
+    ]
+  },
+  {
+    label: '가이드',
+    items: [
+      { href: '/guides/basic-commands', label: '기본 명령어' },
+      { href: '/guides/core-workflows', label: '핵심 워크플로우' },
+      { href: '/guides/advanced-features', label: '고급 기능' },
+      { href: '/guides/best-practices', label: '모범 사례' },
+    ]
+  },
+  {
+    label: 'AI Native',
+    items: [
+      { href: '/ai-native/overview', label: '개요' },
+      { href: '/ai-native/core-principles', label: '핵심 원칙' },
+      { href: '/ai-native/workflow', label: '워크플로우' },
+      { href: '/ai-native/sdlc', label: 'SDLC' },
+      { href: '/ai-native/tools', label: '도구' },
+      { href: '/ai-native/best-practices', label: '모범 사례' },
+    ]
+  },
+  {
+    label: '개발자',
+    items: [
+      { href: '/developers/developer-tools', label: '개발 도구' },
+      { href: '/developers/use-cases', label: '활용 사례' },
+      { href: '/developers/enterprise', label: '엔터프라이즈' },
+    ]
+  },
+  {
+    label: '커뮤니티',
+    href: '/community'
+  }
+] as const;
+
+// Legacy flat navigation for backward compatibility
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: '/', label: '홈' },
   { href: '/getting-started', label: '시작하기' },
-  { href: '/usage-guide', label: '사용법 가이드' },
+  { href: '/guides/basic-commands', label: '가이드' },
+  { href: '/guides/advanced-features', label: '고급 기능' },
+  { href: '/developers/developer-tools', label: '개발자 도구' },
+  { href: '/developers/enterprise', label: '엔터프라이즈' },
+  { href: '/guides/best-practices', label: '모범 사례' },
   { href: '/tutorials', label: '튜토리얼' },
   { href: '/ai-native', label: 'AI Native' },
   { href: '/community', label: '커뮤니티' },
-  { href: '/use-cases', label: '활용 사례' },
+  { href: '/developers/use-cases', label: '활용 사례' },
 ] as const;
 
 export const EXTERNAL_LINKS = {

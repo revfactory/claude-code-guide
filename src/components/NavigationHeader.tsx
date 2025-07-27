@@ -1,8 +1,8 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { NAVIGATION_ITEMS, EXTERNAL_LINKS, GitHubIcon } from '../constants/navigation';
+import { MAIN_NAVIGATION, EXTERNAL_LINKS, GitHubIcon, NavigationItem } from '../constants/navigation';
 
 interface NavigationHeaderProps {
   isMobileMenuOpen: boolean;
@@ -17,10 +17,83 @@ export default function NavigationHeader({
   getLinkClassName,
   children
 }: NavigationHeaderProps) {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const desktopLinkClasses = 'transition-colors';
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (openDropdown) {
+        const currentRef = dropdownRefs.current[openDropdown];
+        if (currentRef && !currentRef.contains(event.target as Node)) {
+          setOpenDropdown(null);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDropdown]);
+
+  const renderNavItem = (item: NavigationItem, index: number) => {
+    const hasDropdown = item.items && item.items.length > 0;
+    const isOpen = openDropdown === item.label;
+
+    if (!hasDropdown && item.href) {
+      return (
+        <Link
+          key={item.href}
+          href={item.href}
+          className={getLinkClassName(item.href, desktopLinkClasses)}
+        >
+          {item.label}
+        </Link>
+      );
+    }
+
+    return (
+      <div
+        key={index}
+        className="relative"
+        ref={(el) => { dropdownRefs.current[item.label] = el; }}
+      >
+        <button
+          onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+          className="flex items-center space-x-1 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        >
+          <span>{item.label}</span>
+          <svg
+            className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+
+        {isOpen && hasDropdown && (
+          <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 py-2 z-[100]">
+            {item.items.map((subItem) => (
+              <Link
+                key={subItem.href}
+                href={subItem.href!}
+                className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                onClick={() => setOpenDropdown(null)}
+              >
+                {subItem.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
-    <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
+    <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm relative z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
@@ -35,15 +108,7 @@ export default function NavigationHeader({
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {NAVIGATION_ITEMS.map((item) => (
-              <Link 
-                key={item.href}
-                href={item.href} 
-                className={getLinkClassName(item.href, desktopLinkClasses)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {MAIN_NAVIGATION.map((item, index) => renderNavItem(item, index))}
             
             <a 
               href={EXTERNAL_LINKS.github.href} 

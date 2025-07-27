@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import NavigationHeader from '@/components/NavigationHeader';
 import MobileMenu from '@/components/MobileMenu';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 function CopyButton({ text, className = "" }: { text: string; className?: string }) {
@@ -56,12 +57,7 @@ export default function CoreWorkflows() {
       </NavigationHeader>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Breadcrumb */}
-        <nav className="flex mb-8 text-sm">
-          <a href="/usage-guide" className="text-blue-600 dark:text-blue-400 hover:underline">사용법 가이드</a>
-          <span className="mx-2 text-slate-500">/</span>
-          <span className="text-slate-900 dark:text-white">핵심 워크플로우</span>
-        </nav>
+        <Breadcrumb items={[{ label: '가이드', href: '/guides/basic-commands' }, { label: '핵심 워크플로우' }]} />
 
         {/* Hero Section */}
         <div className="mb-12">

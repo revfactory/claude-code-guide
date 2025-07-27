@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import NavigationHeader from '@/components/NavigationHeader';
 import MobileMenu from '@/components/MobileMenu';
+import Breadcrumb from '@/components/Breadcrumb';
 import { useNavigationMenu } from '@/hooks/useNavigationMenu';
 
 function CopyButton({ text, className = "" }: { text: string; className?: string }) {
@@ -56,6 +57,7 @@ export default function GettingStarted() {
       </NavigationHeader>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Breadcrumb items={[{ label: '시작하기' }]} />
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -246,12 +248,41 @@ export default function GettingStarted() {
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">3. Claude Code 설치</h3>
-                <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-slate-400 text-sm">터미널</span>
-                    <CopyButton text="npm install -g @anthropic-ai/claude-code" />
+                <p className="text-slate-600 dark:text-slate-300 mb-3">운영체제에 따라 다양한 설치 방법을 선택할 수 있습니다:</p>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-medium text-slate-900 dark:text-white mb-2">npm (모든 플랫폼)</h4>
+                    <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-sm">터미널</span>
+                        <CopyButton text="npm install -g @anthropic-ai/claude-code" />
+                      </div>
+                      <code className="text-green-400 font-mono">npm install -g @anthropic-ai/claude-code</code>
+                    </div>
                   </div>
-                  <code className="text-green-400 font-mono">npm install -g @anthropic-ai/claude-code</code>
+                  
+                  <div>
+                    <h4 className="font-medium text-slate-900 dark:text-white mb-2">Homebrew (macOS/Linux)</h4>
+                    <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-sm">터미널</span>
+                        <CopyButton text="brew install claude-code" />
+                      </div>
+                      <code className="text-green-400 font-mono">brew install claude-code</code>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-medium text-slate-900 dark:text-white mb-2">curl (직접 설치)</h4>
+                    <div className="bg-slate-900 dark:bg-slate-800 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-slate-400 text-sm">터미널</span>
+                        <CopyButton text="curl -fsSL https://claude.ai/install.sh | sh" />
+                      </div>
+                      <code className="text-green-400 font-mono">curl -fsSL https://claude.ai/install.sh | sh</code>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -364,7 +395,25 @@ export default function GettingStarted() {
                         <ul className="text-sm text-slate-500 dark:text-slate-400 space-y-1">
                           <li>• 기업 클라우드 인프라와 통합</li>
                           <li>• 규정 준수 및 보안 요구사항 충족</li>
+                          <li>• 온프레미스 배포 가능</li>
                         </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="border border-slate-200 dark:border-slate-600 rounded-lg p-4">
+                    <div className="flex items-start">
+                      <div className="w-6 h-6 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mt-1 mr-3">
+                        <span className="text-orange-600 dark:text-orange-400 font-bold text-sm">4</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-white mb-2">API Key 인증</h4>
+                        <p className="text-slate-600 dark:text-slate-300 text-sm mb-2">
+                          환경 변수를 통한 직접 API Key 설정
+                        </p>
+                        <div className="bg-slate-900 dark:bg-slate-800 rounded p-2 text-xs">
+                          <code className="text-green-400 font-mono">export ANTHROPIC_API_KEY="sk-ant-..."</code>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -468,7 +517,7 @@ export default function GettingStarted() {
               <a href="/" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors text-center">
                 홈으로 돌아가기
               </a>
-              <a href="/use-cases" className="border border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center">
+              <a href="/tutorials" className="border border-blue-300 dark:border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-center">
                 실전 튜토리얼
               </a>
             </div>
@@ -570,7 +619,7 @@ export default function GettingStarted() {
 
             <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
               <p className="text-blue-800 dark:text-blue-200">
-                더 많은 문제 해결 방법은 <a href="/use-cases" className="font-medium hover:underline">문제 해결 가이드</a>를 참고하세요.
+                더 많은 문제 해결 방법은 <a href="/guides/troubleshooting" className="font-medium hover:underline">문제 해결 가이드</a>를 참고하세요.
               </p>
             </div>
           </div>
