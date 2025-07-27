@@ -78,7 +78,14 @@ export default function AdvancedFeatures() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">서브 에이전트 (Sub-Agents)</h2>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center">
+                서브 에이전트 (Sub-Agents)
+                <a href="/guides/sub-agents" className="ml-3 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" title="세부 가이드 보기">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </h2>
             </div>
 
             <p className="text-slate-600 dark:text-slate-300 mb-6">
@@ -129,6 +136,20 @@ export default function AdvancedFeatures() {
                     → 코드 분석 에이전트가 자동으로 활성화되어 심층 분석을 수행합니다
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-blue-800 dark:text-blue-200 flex items-center">
+                  <strong>💡 더 자세히 알아보기:</strong> 
+                  <span className="ml-1">서브 에이전트의 생성, 커스터마이징, 고급 활용법에 대한</span>
+                  <a href="/guides/sub-agents" className="font-medium hover:underline ml-1 inline-flex items-center group">
+                    세부 가이드
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
+                  <span className="ml-1">를 확인하세요.</span>
+                </p>
               </div>
             </div>
           </div>
