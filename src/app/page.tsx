@@ -117,7 +117,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              <Link href="/guides/advanced-features#subagents" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-400">
+              <Link href="/guides/sub-agents" className="block p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-shadow bg-white dark:bg-slate-800 hover:border-blue-500 dark:hover:border-blue-400">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
