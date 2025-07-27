@@ -74,7 +74,7 @@ export default function NavigationHeader({
           </svg>
         </button>
 
-        {isOpen && hasDropdown && (
+        {isOpen && hasDropdown && item.items && (
           <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 py-2 z-[100]">
             {item.items.map((subItem) => (
               <Link
